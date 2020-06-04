@@ -7,20 +7,6 @@ $colfontdark:#717171;
 $bgcol:#e0e0e0;
 $fs12:0.12rem;
 $fs14:0.14rem;
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-a {
-    text-decoration: none
-}
-
-li {
-    list-style: none;
-}
-
 html,
 body {
     background-color: #f7f8f8;
@@ -78,6 +64,9 @@ body {
         zoom: 1;
         z-index: 3;
         ul {
+            .active {
+                background-color: $colgreen;
+            }
             li {
                 float: left;
                 text-indent: -999rem;
@@ -87,12 +76,15 @@ body {
                 margin: 0 0.05rem;
                 border-radius: 50%;
             }
+            li:hover {
+                cursor: pointer;
+            }
         }
     }
     //左右按键
     .btn_lr {
         zoom: 1;
-        z-index: 4;
+        z-index: 1;
         a {
             display: none;
             width: 0.4rem;
@@ -111,13 +103,33 @@ body {
             right: 0;
             background-position: -0.5rem 0;
         }
-        #left:hover,
-        #right:hover {
+        #left:hover {
+            display: block;
             opacity: 0.7;
         }
+        #right:hover {
+            display: block;
+            opacity: 0.7;
+        }
+        // #left:hover~#right {
+        //     display: block;
+        //     // opacity: 0.7;
+        // }
+        // #right:hover~#left {
+        //     display: block;
+        //     // opacity: 0.7;
+        // }
+        // #right:hover .btn_lr:first-child {
+        //     display: block;
+        // }
     }
 }
 
+#banner_img:hover .btn_lr a {
+    display: block;
+}
+
+//列表样式
 .dhwarp {
     width: 12rem;
     margin: 0 auto;
@@ -154,6 +166,7 @@ body {
         font-size: $fs14;
         color: #444;
         line-height: 0.24rem;
+        // position: relative;
         i {
             display: inline-block;
             vertical-align: middle;
@@ -175,7 +188,52 @@ body {
             color: $colgreen;
             display: none;
         }
+        em {
+            display: none;
+            width: 0.1rem;
+            height: 0.41rem;
+            background-color: rgba($color: #f9f9f9, $alpha: 0.95);
+            position: absolute;
+        }
     }
+    @mixin emsty($top) {
+        z-index: 9;
+        display: block;
+        top: $top;
+        right: -0.08rem;
+    }
+    //------
+    .supitem:nth-of-type(1):hover em {
+        @include emsty(0.38rem);
+    }
+    .supitem:nth-of-type(2):hover em {
+        @include emsty(0.8rem);
+    }
+    .supitem:nth-of-type(3):hover em {
+        @include emsty(1.22rem);
+    }
+    .supitem:nth-of-type(4):hover em {
+        @include emsty(1.64rem);
+    }
+    .supitem:nth-of-type(5):hover em {
+        @include emsty(2.06rem);
+    }
+    .supitem:nth-of-type(6):hover em {
+        @include emsty(2.48rem);
+    }
+    .supitem:nth-of-type(7):hover em {
+        @include emsty(2.90rem);
+    }
+    .supitem:nth-of-type(8):hover em {
+        @include emsty(3.32rem);
+    }
+    .supitem:nth-of-type(9):hover em {
+        @include emsty(3.74rem);
+    }
+    .supitem:nth-of-type(10):hover em {
+        @include emsty(4.16rem);
+    }
+    //------
     .supitem:nth-of-type(1) i {
         background-position: -0.48rem 0;
     }
@@ -282,7 +340,6 @@ body {
     }
 }
 
-//F1
 #F1,
 #F2,
 #F3,
@@ -291,19 +348,541 @@ body {
 #F6,
 #F7,
 #F8 {
-    border: solid 0.01rem #ccc;
+    // border: solid 0.01rem #ccc;
     width: 12rem;
     height: 5rem;
     margin: 0 auto;
+    font-size: $fs12;
+    margin-top: 0.18rem;
+}
+
+@mixin bgposition($left,
+$top) {
+    display: inline-block;
+    width: 0.45rem;
+    height: 0.32rem;
+    padding: 0.1rem 0.07rem 0.04rem;
+    margin-right: 0.1rem;
+    font-size: $fs14;
+    color: white;
+    line-height: 0.18rem;
+    background: url(../img/main-nav-icon.png);
+    font-style: normal;
+    background-position: $left $top;
+}
+
+@mixin h3sty {
+    float: left;
+    height: 0.32rem;
+    line-height: 0.32rem;
+    color: #646464;
+    font-size: 0.18rem;
+}
+
+@mixin pspsty {
+    display: inline-block;
+    padding: 0 0.07rem;
+    color: #4e4e4e;
+    line-height: 0.12rem;
+    border-right: 0.01rem solid #4e4e4e;
+}
+
+%ff1f2 {
+    li {
+        float: left;
+        background-color: white;
+        overflow: hidden;
+    }
+    .c0:hover {
+        cursor: pointer;
+    }
+    .c1,
+    .c2,
+    .c3,
+    .c4,
+    .c5,
+    .c6 {
+        height: 2.31rem;
+        border-top: 0.01rem solid #d5d5d5;
+        border-right: 0.01rem solid #d5d5d5;
+        img {
+            transition: all 0.5s;
+        }
+    }
+    .c4,
+    .c5,
+    .c6 {
+        height: 2.32rem;
+        border-bottom: 0.01rem solid #d5d5d5;
+    }
+    .c1:hover,
+    .c2:hover,
+    .c3:hover,
+    .c4:hover,
+    .c5:hover,
+    .c6:hover {
+        cursor: pointer;
+        img {
+            transform: translateX(0.1rem);
+        }
+    }
+}
+
+//F1
+#F1 {
+    .f1title {
+        margin-bottom: 0.05rem;
+        height: 0.32rem;
+        h3 {
+            @include h3sty();
+            i {
+                @include bgposition(0,
+                0);
+            }
+        }
+        h3:hover {
+            cursor: pointer;
+        }
+        p {
+            float: right;
+            line-height: 0.32rem;
+            span {
+                @include pspsty();
+            }
+            span:nth-last-of-type(1) {
+                border-right: none;
+                padding-right: 0;
+            }
+            span:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+    //图片列表
+    .f1main {
+        ul {
+            @extend %ff1f2;
+        }
+    }
 }
 
 //F2
+#F2 {
+    .f2title {
+        margin-bottom: 0.05rem;
+        height: 0.32rem;
+        h3 {
+            @include h3sty();
+            color: #45c6ce;
+            i {
+                @include bgposition(-1.84rem,
+                0);
+            }
+        }
+        h3:hover {
+            cursor: pointer;
+        }
+        p {
+            float: right;
+            line-height: 0.32rem;
+            span {
+                @include pspsty();
+            }
+            span:nth-last-of-type(1) {
+                border-right: none;
+                padding-right: 0;
+            }
+            span:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+    //图片列表
+    .f2main {
+        ul {
+            @extend %ff1f2;
+        }
+    }
+}
+
+//F3,F4,F6,F8样式
+%F3F4F6F8 {
+    li {
+        float: left;
+        background-color: white;
+        overflow: hidden;
+        img {
+            display: block;
+        }
+    }
+    .c0:hover {
+        cursor: pointer;
+    }
+    .c1,
+    .c6 {
+        border-top: 0.01rem solid #d5d5d5;
+        border-right: 0.01rem solid #d5d5d5;
+    }
+    .c1,
+    .c6,
+    .c7 {
+        border-bottom: 0.01rem solid #d5d5d5;
+    }
+    li img {
+        transition: all 0.5s;
+    }
+    img:hover {
+        transform: translateX(0.1rem);
+    }
+    .c0 img:hover {
+        transform: none;
+    }
+    .c2 {
+        border-bottom: 0.01rem solid #d5d5d5;
+        width: 4.42rem;
+        height: 3.85rem;
+        div {
+            overflow: hidden;
+            float: left;
+            // display: block;
+            width: 2.21rem;
+            height: 1.92rem;
+            border-right: 0.01rem solid #d5d5d5;
+            border-top: 0.01rem solid #d5d5d5;
+        }
+    }
+    .c7 {
+        width: 6.77rem;
+        height: 0.77rem;
+        position: absolute;
+        left: 2.75rem;
+        top: 3.86rem;
+        padding: 0.11rem;
+        border-right: 0.01rem solid #d5d5d5;
+        img {
+            float: left;
+            margin-right: 0.2rem;
+        }
+    }
+    .c6 {
+        height: 4.63rem;
+    }
+}
+
 //F3
+#F3 {
+    .f3title {
+        margin-bottom: 0.05rem;
+        height: 0.32rem;
+        h3 {
+            @include h3sty();
+            color: #f0c000;
+            i {
+                @include bgposition(-0.92rem,
+                0);
+            }
+        }
+        h3:hover {
+            cursor: pointer;
+        }
+        p {
+            float: right;
+            line-height: 0.32rem;
+            span {
+                @include pspsty();
+            }
+            span:nth-last-of-type(1) {
+                border-right: none;
+                padding-right: 0;
+            }
+            span:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+    //图片列表
+    .f3main {
+        ul {
+            height: 4.63rem;
+            position: relative;
+            @extend %F3F4F6F8;
+        }
+    }
+}
+
 //F4
+#F4 {
+    .f4title {
+        margin-bottom: 0.05rem;
+        height: 0.32rem;
+        h3 {
+            @include h3sty();
+            color: #e08683;
+            i {
+                @include bgposition(-1.38rem,
+                0);
+            }
+        }
+        h3:hover {
+            cursor: pointer;
+        }
+        p {
+            float: right;
+            line-height: 0.32rem;
+            span {
+                @include pspsty();
+            }
+            span:nth-last-of-type(1) {
+                border-right: none;
+                padding-right: 0;
+            }
+            span:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+    //图片列表
+    .f4main {
+        ul {
+            height: 4.63rem;
+            position: relative;
+            @extend %F3F4F6F8;
+        }
+    }
+}
+
+//F3,F4,F6,F8样式
+%F5F7 {
+    li {
+        float: left;
+        background-color: white;
+        overflow: hidden;
+        img {
+            display: block;
+        }
+    }
+    .c0:hover {
+        cursor: pointer;
+    }
+    .c1,
+    .c4 {
+        border-top: 0.01rem solid #d5d5d5;
+        border-right: 0.01rem solid #d5d5d5;
+    }
+    .c1,
+    .c4,
+    .c5 {
+        border-bottom: 0.01rem solid #d5d5d5;
+    }
+    li img {
+        transition: all 0.5s;
+    }
+    img:hover {
+        transform: translateX(0.1rem);
+    }
+    .c0 img:hover {
+        transform: none;
+    }
+    .c2 {
+        border-bottom: 0.01rem solid #d5d5d5;
+        width: 4.42rem;
+        height: 3.85rem;
+        div {
+            overflow: hidden;
+            float: left;
+            // display: block;
+            width: 4.42rem;
+            // height: 1.92rem;
+            border-right: 0.01rem solid #d5d5d5;
+            border-top: 0.01rem solid #d5d5d5;
+        }
+    }
+    .c5 {
+        width: 6.77rem;
+        height: 0.77rem;
+        position: absolute;
+        left: 2.75rem;
+        top: 3.86rem;
+        padding: 0.11rem;
+        border-right: 0.01rem solid #d5d5d5;
+        img {
+            float: left;
+            margin-right: 0.2rem;
+        }
+    }
+    .c4 {
+        height: 4.63rem;
+    }
+}
+
 //F5
+#F5 {
+    .f5title {
+        margin-bottom: 0.05rem;
+        height: 0.32rem;
+        h3 {
+            @include h3sty();
+            color: #b84f00;
+            i {
+                @include bgposition(-3.69rem,
+                0);
+            }
+        }
+        h3:hover {
+            cursor: pointer;
+        }
+        p {
+            float: right;
+            line-height: 0.32rem;
+            span {
+                @include pspsty();
+            }
+            span:nth-last-of-type(1) {
+                border-right: none;
+                padding-right: 0;
+            }
+            span:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+    //图片列表
+    .f5main {
+        ul {
+            height: 4.63rem;
+            position: relative;
+            @extend %F5F7;
+        }
+    }
+}
+
 //F6
+#F6 {
+    .f6title {
+        margin-bottom: 0.05rem;
+        height: 0.32rem;
+        h3 {
+            @include h3sty();
+            color: #764e00;
+            i {
+                @include bgposition(-2.30rem,
+                0);
+            }
+        }
+        h3:hover {
+            cursor: pointer;
+        }
+        p {
+            float: right;
+            line-height: 0.32rem;
+            span {
+                @include pspsty();
+            }
+            span:nth-last-of-type(1) {
+                border-right: none;
+                padding-right: 0;
+            }
+            span:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+    //图片列表
+    .f6main {
+        ul {
+            height: 4.63rem;
+            position: relative;
+            @extend %F3F4F6F8;
+        }
+    }
+}
+
 //F7
+#F7 {
+    .f7title {
+        margin-bottom: 0.05rem;
+        height: 0.32rem;
+        h3 {
+            @include h3sty();
+            color: #940606;
+            i {
+                @include bgposition(-4.15rem,
+                0);
+            }
+        }
+        h3:hover {
+            cursor: pointer;
+        }
+        p {
+            float: right;
+            line-height: 0.32rem;
+            span {
+                @include pspsty();
+            }
+            span:nth-last-of-type(1) {
+                border-right: none;
+                padding-right: 0;
+            }
+            span:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+    //图片列表
+    .f7main {
+        ul {
+            height: 4.63rem;
+            position: relative;
+            @extend %F5F7;
+        }
+    }
+}
+
 //F8
-#banner:hover .btn_lr a {
-    display: block;
+#F8 {
+    .f8title {
+        margin-bottom: 0.05rem;
+        height: 0.32rem;
+        h3 {
+            @include h3sty();
+            color: #3ca3dc;
+            i {
+                @include bgposition(-3.23rem,
+                0);
+            }
+        }
+        h3:hover {
+            cursor: pointer;
+        }
+        p {
+            float: right;
+            line-height: 0.32rem;
+            span {
+                @include pspsty();
+            }
+            span:nth-last-of-type(1) {
+                border-right: none;
+                padding-right: 0;
+            }
+            span:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+    //图片列表
+    .f8main {
+        ul {
+            height: 4.63rem;
+            position: relative;
+            @extend %F3F4F6F8;
+        }
+    }
 }

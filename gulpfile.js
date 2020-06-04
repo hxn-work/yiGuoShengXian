@@ -30,9 +30,9 @@ const watch = require('gulp-watch'); //gulp监听
 
 
 //1.创建一个简单的gulp任务
-gulp.task('hello', () => {
-    console.log('hello,gulp');
-});
+// gulp.task('hello', () => {
+//     console.log('hello,gulp');
+// });
 
 //2.复制文件
 gulp.task('copyfile', () => {
