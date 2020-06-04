@@ -1,0 +1,165 @@
+@charset "utf-8"; //设置字符编码。
+$colgreen:#008842;
+$colft:#007f4d;
+$bdcol:#a6a6a6;
+$colfont:#444;
+$colfontdark:#717171;
+$bgcol:#e0e0e0;
+$fs12:0.12rem;
+$fs14:0.14rem;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none
+}
+
+li {
+    list-style: none;
+}
+
+html,
+body {
+    background-color: #f7f8f8;
+    font-size: 100px;
+    color: $colfont;
+}
+
+//底部服务列
+#footer_service {
+    height: 1.02rem;
+    background-color: $bgcol;
+    margin-top: 0.5rem;
+    padding: 0.3rem 0;
+    font-size: $fs14;
+    ul {
+        width: 12rem;
+        height: 0.42rem;
+        margin: 0 auto;
+        li {
+            height: 0.42rem;
+            float: left;
+            width: 2.45rem;
+            padding-left: 0.55rem;
+            margin-left: 0.55rem;
+            background: url(../img/footer_service_icon.png) no-repeat;
+            background-position: 0 0;
+            .pt {
+                color: $colft;
+                font-size: 0.2rem;
+            }
+            p {
+                font-size: $fs12;
+                padding-left: 0.15rem;
+                border-left: 0.01rem solid $bdcol;
+            }
+        }
+        li:nth-of-type(2) {
+            background-position: -0 -0.42rem;
+        }
+        li:nth-of-type(3) {
+            background-position: -0 -0.84rem;
+        }
+        li:nth-of-type(4) {
+            background-position: -0 -1.26rem;
+        }
+    }
+}
+
+// 底部列表
+#footer_list {
+    width: 12rem;
+    height: 1.57rem;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    font-size: $fs14;
+    dl {
+        width: 190px;
+        float: left;
+        margin-left: 50px;
+        dt {
+            height: 0.23rem;
+            line-height: 0.23rem;
+            text-indent: 0.4rem;
+            background: url(../img/footer_icon.png) no-repeat;
+            // background-position: 0 0;
+        }
+        dd {
+            margin: 0.15rem 0 0 0.13rem;
+            a {
+                display: block;
+                font-size: $fs12;
+                padding-left: 0.2rem;
+                border-left: 0.01rem dashed #a8a8a8;
+            }
+            a:hover {
+                cursor: pointer;
+                color: $colft;
+                text-decoration: underline;
+            }
+        }
+    }
+    dl:nth-of-type(2) dt {
+        background-position: 0 -0.24rem;
+    }
+    dl:nth-of-type(3) dt {
+        background-position: 0 -0.46rem;
+    }
+    dl:nth-of-type(4) dt {
+        background-position: 0 -0.69rem;
+    }
+    dl:nth-of-type(5) dt {
+        background-position: 0 -0.92rem;
+    }
+}
+
+// 底部客服电话
+#footer_kf {
+    font-size: $fs14;
+    color: $colft;
+    width: 12rem;
+    height: 0.6rem;
+    padding: 0.2rem 0;
+    margin: 0 auto;
+    text-align: center;
+    .kf {
+        padding: 0 0.1rem;
+    }
+}
+
+#footer_info {
+    width: 12rem;
+    height: 1.2rem;
+    margin: 0 auto;
+    font-size: $fs14;
+    p {
+        text-align: center;
+        font-size: $fs12;
+        color: $colfontdark;
+        line-height: 0.22rem;
+    }
+    p:nth-of-type(3) {
+        height: 0.54rem;
+        a {
+            display: inline-block;
+            margin: 0 0.1rem;
+            height: 0.54rem;
+            font-size: $fs12;
+            line-height: 0.54rem;
+            img {
+                height: 0.47rem;
+                vertical-align: middle;
+            }
+        }
+        a:nth-of-type(7) img {
+            height: 0.2rem;
+            margin-right: 0.04rem;
+        }
+        a:hover {
+            cursor: pointer;
+        }
+    }
+}
