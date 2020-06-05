@@ -20,16 +20,26 @@ body {
     height: 0.7rem;
     background-color: #e0e0e0;
     padding: 0.15rem 0 0.05rem 0;
-    h1 {
+    div {
         width: 12rem;
+        height: 0.5rem;
         margin: 0 auto;
-        line-height: 0.5rem;
-        text-indent: 2.4rem;
-        font-size: 0.28rem;
-        font-weight: normal;
-        font-family: Arial, Verdana, "\5b8b\4f53";
-        color: #008842;
-        background: url(../img/logo.png) no-repeat;
+        h1 {
+            float: left;
+            width: 1.6rem;
+            margin-right: 0.8rem;
+            height: 0.5rem;
+            // text-indent: 2.4rem;
+            background: url(../img/logo.png) no-repeat;
+        }
+        h2 {
+            float: left;
+            line-height: 0.5rem;
+            font-size: 0.28rem;
+            font-weight: normal;
+            font-family: Arial, Verdana, "\5b8b\4f53";
+            color: #008842;
+        }
     }
 }
 
