@@ -4,20 +4,17 @@ $colfont:#444;
 $bgcol:#e0e0e0;
 $fs12:0.12rem;
 $fs14:0.14rem;
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-a {
-    text-decoration: none
-}
-
-li {
-    list-style: none;
-}
-
+// * {
+//     padding: 0;
+//     margin: 0;
+//     box-sizing: border-box;
+// }
+// a {
+//     text-decoration: none
+// }
+// li {
+//     list-style: none;
+// }
 html,
 body {
     background-color: #f7f8f8;
@@ -30,6 +27,7 @@ body {
     height: 0.3rem;
     margin: 0 auto;
     .left {
+        height: 0.3rem;
         float: left;
         li {
             display: block;
@@ -124,6 +122,39 @@ body {
         }
         span {
             margin: 0 0.1rem 0 0.1rem;
+            color: $colfont;
+            #yhm {
+                display: none;
+                color: $colfont;
+            }
+            #tuichu {
+                display: none;
+                color: $colfont;
+            }
+            #login {
+                color: $colfont;
+                text-decoration: none;
+            }
+            #register {
+                color: $colfont;
+                text-decoration: none;
+            }
+            #yhm:hover {
+                color: $colgreen;
+                cursor: pointer;
+            }
+            #tuichu:hover {
+                color: $colgreen;
+                cursor: pointer;
+            }
+            #login:hover {
+                color: $colgreen;
+                cursor: pointer;
+            }
+            #register:hover {
+                color: $colgreen;
+                cursor: pointer;
+            }
         }
     }
 }
@@ -163,10 +194,10 @@ body {
                 background-color: rgba($color: #ccc, $alpha: 0);
             }
             label {
-                line-height: 0.28rem;
+                line-height: 0.32rem;
                 display: inline-block;
                 width: 0.81rem;
-                height: 0.28rem;
+                height: 0.32rem;
                 font-size: $fs14;
                 color: white;
                 background-color: green;
@@ -285,9 +316,9 @@ body {
             }
             label {
                 float: left;
-                line-height: 0.28rem;
+                line-height: 0.32rem;
                 width: 0.81rem;
-                height: 0.28rem;
+                height: 0.32rem;
                 font-size: $fs14;
                 color: white;
                 background-color: green;
@@ -298,7 +329,7 @@ body {
                 margin-left: 0.1rem;
                 float: left;
                 // float: right;
-                width: 2.3rem;
+                // width: 2.3rem;
                 height: 0.3rem;
                 line-height: 0.3rem;
                 font-size: $fs12;

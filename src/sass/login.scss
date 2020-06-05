@@ -1,0 +1,226 @@
+@charset "utf-8"; //设置字符编码。
+$colgreen:#008842;
+$colft:#007f4d;
+$bdcol:#a6a6a6;
+$colfont:#444;
+$colfontdark:#717171;
+$bgcol:#e0e0e0;
+$fs12:0.12rem;
+$fs14:0.14rem;
+html,
+body {
+    background-color: #f7f8f8;
+    font-size: 100px;
+    color: $colfont;
+}
+
+//头部
+#lg_header {
+    font-size: $fs14;
+    height: 0.7rem;
+    background-color: #e0e0e0;
+    padding: 0.15rem 0 0.05rem 0;
+    h1 {
+        width: 12rem;
+        margin: 0 auto;
+        line-height: 0.5rem;
+        text-indent: 2.4rem;
+        font-size: 0.28rem;
+        font-weight: normal;
+        font-family: Arial, Verdana, "\5b8b\4f53";
+        color: #008842;
+        background: url(../img/logo.png) no-repeat;
+    }
+}
+
+//主体
+#lg_main {
+    height: 4.84rem;
+    padding-top: 0.3rem;
+    background-color: white;
+    font-size: $fs12;
+    .biaodan {
+        width: 12rem;
+        height: 4.54rem;
+        margin: 0 auto;
+        // border: 0.01rem solid #ccc;
+    }
+}
+
+.biaodan {
+    form {
+        border: solid 0.01rem #e3e6e0;
+        padding: 0.3rem 0.2rem 0.2rem;
+        float: right;
+        width: 3.5rem;
+        height: 4.54rem;
+        margin-right: 1.05rem;
+        p {
+            position: relative;
+            margin-bottom: 0.2rem;
+            strong {
+                color: #262626;
+                font: 18px/1 "Microsoft YaHei";
+            }
+            span {
+                position: absolute;
+                top: 0;
+                right: 0;
+                font: 12px Arial, "SimSun";
+                color: #878787;
+                a {
+                    color: $colft;
+                    text-decoration: underline;
+                }
+                a:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.uname {
+    height: 0.40rem;
+    width: 3.08rem;
+    label {
+        display: inline-block;
+        vertical-align: middle;
+        width: 0.4rem;
+        height: 0.38rem;
+        background: url(../img/dl_bd.png) no-repeat;
+        background-position: 0 -1.2rem;
+        border: solid 0.01rem #ccc;
+    }
+    input {
+        display: inline-block;
+        width: 2.64rem;
+        height: 0.34rem;
+        vertical-align: middle;
+        margin-left: -0.06rem;
+        border: solid 0.01rem #ccc;
+    }
+}
+
+.upassword {
+    height: 0.40rem;
+    width: 3.08rem;
+    label {
+        display: inline-block;
+        vertical-align: middle;
+        width: 0.4rem;
+        height: 0.38rem;
+        background: url(../img/dl_bd.png) no-repeat;
+        background-position: 0 -1.8rem;
+        border: solid 0.01rem #ccc;
+    }
+    input {
+        display: inline-block;
+        width: 2.64rem;
+        height: 0.34rem;
+        vertical-align: middle;
+        margin-left: -0.06rem;
+        border: solid 0.01rem #ccc;
+    }
+}
+
+.yzm {
+    height: 0.40rem;
+    width: 3.08rem;
+    .ypic {
+        display: inline-block;
+        vertical-align: middle;
+        width: 0.4rem;
+        height: 0.38rem;
+        background: url(../img/dl_bd.png) no-repeat;
+        background-position: 0 -1.8rem;
+        border: solid 0.01rem #ccc;
+    }
+    #yan {
+        display: inline-block;
+        width: 1.1rem;
+        height: 0.34rem;
+        vertical-align: middle;
+        margin-left: -0.06rem;
+        border: solid 0.01rem #ccc;
+    }
+    .yy {
+        display: inline-block;
+        vertical-align: middle;
+        width: 0.6rem;
+        height: 0.38rem;
+        border: solid 0.01rem #ccc;
+        border-left: none;
+        margin-left: -0.06rem;
+    }
+    i {
+        font: 12px Arial, "SimSun";
+        color: #878787;
+    }
+    i:hover {
+        color: $colft;
+        cursor: pointer;
+    }
+}
+
+.jzmm {
+    font: 12px Arial, "SimSun";
+    color: #878787;
+    label {
+        margin-left: 0.05rem;
+    }
+}
+
+.tj {
+    height: 0.50rem;
+    width: 3.08rem;
+    // margin-bottom: 0.2rem;
+    input {
+        display: inline-block;
+        width: 3.08rem;
+        height: 0.5rem;
+        background-color: #008842;
+        // vertical-align: middle;
+        // margin-left: -0.06rem;
+        border: solid 0.01rem #ccc;
+        text-align: center;
+        color: #fff;
+        font: 18px/50px "Microsoft YaHei";
+    }
+    input:hover {
+        cursor: pointer;
+    }
+}
+
+.dsf {
+    font: 12px Arial, "SimSun";
+    color: #878787;
+    height: 0.57rem;
+    .qpic {
+        display: inline-block;
+        width: 0.88rem;
+        height: 0.2rem;
+        margin-right: 0.2rem;
+        background: url(../img/dl_yz.png) no-repeat;
+        background-position: -0.6rem -2rem;
+    }
+    .wpic {
+        display: inline-block;
+        width: 0.88rem;
+        height: 0.2rem;
+        margin-right: 0.2rem;
+        background: url(../img/dl_yz.png) no-repeat;
+        background-position: -1.6rem -2rem;
+    }
+    .apic {
+        display: inline-block;
+        width: 0.57rem;
+        height: 0.2rem;
+        margin-right: 0.2rem;
+        background: url(../img/dl_yz.png) no-repeat;
+        background-position: -2.6rem -2rem;
+    }
+    span:hover {
+        cursor: pointer;
+    }
+}

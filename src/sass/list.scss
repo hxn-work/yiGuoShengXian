@@ -1,0 +1,15 @@
+@charset "utf-8"; //设置字符编码。
+$colgreen:#008842;
+$colft:#007f4d;
+$bdcol:#a6a6a6;
+$colfont:#444;
+$colfontdark:#717171;
+$bgcol:#e0e0e0;
+$fs12:0.12rem;
+$fs14:0.14rem;
+html,
+body {
+    background-color: #f7f8f8;
+    font-size: 100px;
+    color: $colfont;
+}

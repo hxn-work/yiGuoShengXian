@@ -14,47 +14,10 @@ body {
     color: $colfont;
 }
 
-//底部服务列
-#footer_service {
-    display: block;
-    height: 1.02rem;
-    background-color: $bgcol;
-    margin-top: 0.5rem;
-    padding: 0.3rem 0;
-    font-size: $fs14;
-    ul {
-        width: 12rem;
-        height: 0.42rem;
-        margin: 0 auto;
-        li {
-            height: 0.42rem;
-            float: left;
-            width: 2.45rem;
-            padding-left: 0.55rem;
-            margin-left: 0.55rem;
-            background: url(../img/footer_service_icon.png) no-repeat;
-            background-position: 0 0;
-            .pt {
-                color: $colft;
-                font-size: 0.2rem;
-            }
-            p {
-                line-height: 0.22rem;
-                font-size: $fs12;
-                padding-left: 0.15rem;
-                border-left: 0.01rem solid $bdcol;
-            }
-        }
-        li:nth-of-type(2) {
-            background-position: -0 -0.42rem;
-        }
-        li:nth-of-type(3) {
-            background-position: -0 -0.84rem;
-        }
-        li:nth-of-type(4) {
-            background-position: -0 -1.26rem;
-        }
-    }
+//分割
+#fenge {
+    border-bottom: 0.01rem solid #e0e0e0;
+    height: 0.3rem;
 }
 
 // 底部列表

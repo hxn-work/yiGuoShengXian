@@ -1,0 +1,249 @@
+@charset "utf-8"; //设置字符编码。
+$colgreen:#008842;
+$colft:#007f4d;
+$bdcol:#a6a6a6;
+$colfont:#444;
+$colfontdark:#717171;
+$bgcol:#e0e0e0;
+$fs12:0.12rem;
+$fs14:0.14rem;
+html,
+body {
+    background-color: #f7f8f8;
+    font-size: 100px;
+    color: $colfont;
+}
+
+//头部
+#rg_header {
+    font-size: $fs14;
+    height: 0.7rem;
+    background-color: #e0e0e0;
+    padding: 0.15rem 0 0.05rem 0;
+    h1 {
+        width: 12rem;
+        margin: 0 auto;
+        line-height: 0.5rem;
+        text-indent: 2.4rem;
+        font-size: 0.28rem;
+        font-weight: normal;
+        font-family: Arial, Verdana, "\5b8b\4f53";
+        color: #008842;
+        background: url(../img/logo.png) no-repeat;
+    }
+}
+
+// 主体
+#rg_warp {
+    height: 6.64rem;
+    padding-top: 0.3rem;
+    .main {
+        margin: 0 auto;
+        width: 12rem;
+        height: 6.34rem;
+        border: 0.01rem solid #a5c9b6;
+        border-top: none;
+        background-color: white;
+        font-size: $fs12;
+        padding-bottom: 0.5rem;
+        .tishi {
+            height: 0.4rem;
+            text-align: right;
+            font: $fs14 "Microsoft YaHei";
+            line-height: 0.4rem;
+            a {
+                text-decoration: underline;
+                color: #ef760a;
+                margin-left: 0.05rem;
+                margin-right: 0.36rem;
+            }
+            a:hover {
+                cursor: pointer;
+            }
+        }
+        .right {
+            vertical-align: bottom;
+            width: 3.3rem;
+            height: 3.9rem;
+            border-left: 0.01rem dashed #a5c9b6;
+            float: right;
+            padding-top: 0.5rem;
+        }
+        .left {
+            width: 7.16rem;
+            height: 5.43rem;
+            float: left;
+            // border: dashed 0.01rem black;
+        }
+    }
+}
+
+label {
+    color: $colfont;
+    font: 14px Arial, "Microsoft YaHei";
+    display: inline-block;
+    text-align: right;
+    width: 2.2rem;
+    height: 0.38rem;
+    margin-right: 0.2rem;
+    line-height: 0.38rem;
+}
+
+// 验证码
+.txyzm {
+    width: 7.16rem;
+    height: 0.4rem;
+    margin-bottom: 0.29rem;
+    #txyzm {
+        display: inline-block;
+        width: 1.47rem;
+        height: 0.38rem;
+        margin-right: 0.2rem;
+        border: solid 0.01rem #c1c1c1;
+        padding: 0 0 0 0.14rem;
+    }
+    .yy {
+        display: inline-block;
+        vertical-align: middle;
+        width: 0.6rem;
+        height: 0.38rem;
+        border: solid 0.01rem #ccc;
+        margin-left: -0.06rem;
+        margin-right: 0;
+    }
+    i {
+        font: 12px Arial, "SimSun";
+        color: #878787;
+    }
+    i:hover {
+        color: $colft;
+        cursor: pointer;
+    }
+}
+
+// 用户名
+.uname {
+    width: 7.16rem;
+    height: 0.4rem;
+    margin-bottom: 0.29rem;
+    #uname {
+        display: inline-block;
+        width: 2.9rem;
+        height: 0.38rem;
+        margin-right: 0.2rem;
+        border: solid 0.01rem #c1c1c1;
+        padding: 0 0 0 0.14rem;
+        background: url(../img/dl_bd.png) no-repeat;
+        background-position: 2.66rem -1.2rem;
+    }
+}
+
+// 手机号
+.uphone {
+    width: 7.16rem;
+    height: 0.4rem;
+    margin-bottom: 0.29rem;
+    #uphone {
+        display: inline-block;
+        width: 2.9rem;
+        height: 0.38rem;
+        margin-right: 0.2rem;
+        border: solid 0.01rem #c1c1c1;
+        padding: 0 0 0 0.14rem;
+        background: url(../img/dl_bd.png) no-repeat;
+        background-position: 2.76rem -0.3rem;
+    }
+}
+
+// 密码
+.upwd {
+    width: 7.16rem;
+    height: 0.4rem;
+    margin-bottom: 0.29rem;
+    #upwd {
+        display: inline-block;
+        width: 2.9rem;
+        height: 0.38rem;
+        margin-right: 0.2rem;
+        border: solid 0.01rem #c1c1c1;
+        padding: 0 0 0 0.14rem;
+        background: url(../img/dl_bd.png) no-repeat;
+        background-position: 2.76rem -0.7rem;
+    }
+}
+
+// 确认密码
+.urepwd {
+    width: 7.16rem;
+    height: 0.4rem;
+    margin-bottom: 0.29rem;
+    #urepwd {
+        display: inline-block;
+        width: 2.9rem;
+        height: 0.38rem;
+        margin-right: 0.2rem;
+        border: solid 0.01rem #c1c1c1;
+        padding: 0 0 0 0.14rem;
+        background: url(../img/dl_bd.png) no-repeat;
+        background-position: 2.76rem -0.7rem;
+    }
+}
+
+// 邀请码
+.yqm {
+    width: 7.16rem;
+    height: 0.4rem;
+    margin-bottom: 0.29rem;
+    #yqm {
+        display: inline-block;
+        width: 2.9rem;
+        height: 0.38rem;
+        margin-right: 0.2rem;
+        border: solid 0.01rem #c1c1c1;
+        padding: 0 0 0 0.14rem;
+        background: url(../img/dl_bd.png) no-repeat;
+        background-position: 2.76rem -0.7rem;
+    }
+}
+
+// 同意
+.yty {
+    width: 7.16rem;
+    height: 0.4rem;
+    margin-bottom: 0.29rem;
+    color: #878787;
+    .yty_la {
+        width: auto;
+        margin-left: 0.05rem;
+        text-align: left;
+        font: 14px Arial, "Microsoft YaHei";
+        a {
+            color: #008842;
+            font: 12px Arial, "Microsoft YaHei";
+            margin: 0 0.06rem;
+        }
+        a:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+// 提交
+.tj {
+    width: 7.16rem;
+    height: 0.4rem;
+    margin-bottom: 0.29rem;
+    #tj {
+        display: inline-block;
+        width: 3.06rem;
+        height: 0.5rem;
+        background-color: grey;
+        border: solid 0.01rem #ccc;
+        text-align: center;
+        color: #fff;
+        font: 18px/50px "Microsoft YaHei";
+    }
+    input:hover {
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>易果网</title>
+    <link rel="stylesheet" href="./css/reset200802.css">
+    <link rel="stylesheet" href="./css/register.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div id="rg_header">
+        <h1>注册</h1>
+    </div>
+    <!-- 主体 -->
+    <div id="rg_warp">
+        <div class="main">
+            <p class="tishi">我已经注册，现在就<a href="./login.html">登录</a></p>
+            <!-- 表单详情 -->
+            <div class="left">
+                <form action="" method="POST">
+                    <!-- 验证码 -->
+                    <p class="txyzm">
+                        <label for="txyzm">图形验证码</label>
+                        <input type="text" id="txyzm" name="txyzm" placeholder="图形验证码">
+                        <label class="yy"></label>
+                        <i>换一张</i>
+                        <span id="txyzm_ts"></span>
+                    </p>
+                    <!-- 用户名 -->
+                    <p class="uname">
+                        <label for="uname">用户名</label>
+                        <input type="text" id="uname" name="uname" placeholder="用户名">
+                        <span id="uname_ts"></span>
+                    </p>
+                    <!-- 手机号 -->
+                    <p class="uphone">
+                        <label for="uphone">手机号</label>
+                        <input type="text" id="uphone" name="uphone" placeholder="手机号">
+                        <span id="uphone_ts"></span>
+                    </p>
+                    <!-- 密码 -->
+                    <p class="upwd">
+                        <label for="upwd">密码</label>
+                        <input type="password" id="upwd" name="upwd" placeholder="密码">
+                        <span id="upwd_ts"></span>
+                    </p>
+                    <!-- 确认密码 -->
+                    <p class="urepwd">
+                        <label for="urepwd">确认密码</label>
+                        <input type="password" id="urepwd" name="urepwd" placeholder="确认密码">
+                        <span id="urepwd_ts"></span>
+                    </p>
+                    <!-- 邀请码 -->
+                    <p class="yqm">
+                        <label for="yqm">邀请码</label>
+                        <input type="text" id="yqm" name="yqm" placeholder="邀请码">
+                        <span id="yqm_ts"></span>
+                    </p>
+                    <!-- 同意 -->
+                    <p class="yty">
+                        <label for=""></label>
+                        <input type="checkbox" id="yty"><label for="" class="yty_la">我已阅读并同意<a>《易果服务协议》</a><a>《隐私政策》</a></label>
+                    </p>
+                    <!-- 提交 -->
+                    <p class="tj">
+                        <label for=""></label>
+                        <input type="submit" value="立即注册" id="tj">
+                    </p>
+
+                </form>
+            </div>
+            <div class="right"><img src="http://img06.yiguoimg.com/e/web/161205/01853/142855/register.png" alt=""></div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div id="footer"></div>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+<script src="./script/login.js"></script>
+
+</html>

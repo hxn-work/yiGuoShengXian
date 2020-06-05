@@ -3,7 +3,7 @@
     $('#header').load('./header.html');
     $('#footer').load('./footer.html');
 
-    //动态渲染中间的商品列表
+    //动态渲染中间的商品列表  ----开始
     let $fimastr = '<ul>'
     let $f2mastr = '<ul>'
     let $f3mastr = '<ul>'
@@ -156,6 +156,8 @@
         $f8mastr += '</li></ul>'
         $('.f8main').html($f8mastr);
     })
+
+    //动态渲染中间的商品列表  ----结束
 
 
 }(jQuery);
