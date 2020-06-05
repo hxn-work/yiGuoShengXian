@@ -13,3 +13,231 @@ body {
     font-size: 100px;
     color: $colfont;
 }
+
+// ---------------------------------
+// 全部分类
+#qbfl {
+    width: 12rem;
+    height: 0.38rem;
+    margin: 0 auto;
+    border-bottom: 0.01rem solid $colgreen;
+    ul {
+        font-size: $fs14;
+        li {
+            float: left;
+            padding: 0 0.3rem;
+            font: bold 15px/16px "Microsoft YaHei";
+            line-height: 0.38rem;
+            text-align: center;
+            a:hover {
+                cursor: pointer;
+                color: $colft;
+            }
+        }
+        li:nth-of-type(1) {
+            width: 1.8rem;
+            font: bold 15px/16px "Microsoft YaHei";
+            line-height: 0.38rem;
+            color: white;
+            background-color: $colgreen;
+        }
+        li:nth-of-type(1):hover {
+            cursor: pointer;
+        }
+    }
+}
+
+// --------------------------------
+// 所有分类
+#syfl {
+    width: 12rem;
+    height: 0.37rem;
+    margin: 0.2rem auto;
+    font-size: $fs12;
+    border: 0.01rem solid #ccc;
+    line-height: 0.35rem;
+    color: #909090;
+    background: #f1f1f1;
+    p {
+        display: block;
+        float: left;
+        font-family: Arial;
+        background-color: #eaeaea;
+        width: 0.95rem;
+        padding-left: 0.2rem;
+    }
+    ul {
+        float: left;
+        li {
+            line-height: 0.12rem;
+            margin-top: 0.13rem;
+            float: left;
+            padding: 0 0.15rem;
+            border-right: solid 0.01rem $colfont;
+        }
+        li a:hover {
+            cursor: pointer;
+            color: $colft;
+            text-decoration: underline;
+        }
+        li:nth-of-type(6) {
+            border-right: none;
+        }
+        li:nth-of-type(1) {
+            color: $colft;
+            font-weight: bold;
+        }
+    }
+}
+
+// -------------------------------
+// 排序 
+#paixu {
+    width: 12rem;
+    height: 0.4rem;
+    margin: 0 auto;
+    background-color: #eaeaea;
+    padding: 0.05rem 0.1rem;
+    font-size: $fs12;
+    ul {
+        li {
+            float: left;
+            display: block;
+            width: 0.6rem;
+            height: 0.3rem;
+            padding: 0.05rem 0.1rem;
+            border: 0.01rem solid #c7c7c7;
+            background-color: white;
+            border-left: none;
+            font-family: Arial;
+            line-height: 0.18rem;
+            i {
+                display: inline-block;
+                margin-left: 0.03rem;
+                vertical-align: middle;
+                width: 0.1rem;
+                height: 0.16rem;
+                background: url(../img/list_icon.png) no-repeat;
+                background-position: 0 0;
+            }
+        }
+        li:hover {
+            background-color: #eee;
+            color: $colft;
+            cursor: pointer;
+        }
+        #xiaoliang:hover i,
+        #pinglun:hover i {
+            background-position: -0.1rem 0;
+        }
+        #jiage:hover i {
+            background-position: -0.3rem 0;
+        }
+        li:nth-of-type(1) {
+            width: 0.7rem;
+            border: 0.01rem solid #c7c7c7;
+        }
+        .bgactive {
+            background-color: #eee;
+        }
+    }
+    #jiage i {
+        background-position: -0.2rem 0;
+    }
+    // js中点击事件时，需要用的样式
+    #xiaoliang .active {
+        background-position: -0.1rem 0;
+    }
+    #pinglun .active {
+        background-position: -0.1rem 0;
+    }
+    #jiage .activeup {
+        background-position: -0.4rem 0;
+    }
+    #jiage .activedown {
+        background-position: -0.3rem 0;
+    }
+}
+
+// --------------------------
+// 商品列表
+#productlist {
+    width: 12rem;
+    margin: 0 auto;
+    font-size: $fs12;
+    overflow: hidden;
+    color: $colfont;
+    font-family: Arial;
+    ul {
+        li {
+            position: relative;
+            width: 2.9rem;
+            height: 3.58rem;
+            margin: 0.15rem 0.13rem 0 0;
+            float: left;
+            background-color: white;
+            img {
+                display: block;
+                width: 2.9rem;
+                // height: 3.58rem;
+            }
+            span {
+                line-height: 0.22rem;
+                font-size: 0.18rem;
+                color: #e7380d;
+                margin-left: 0.1rem;
+                font-weight: 900;
+            }
+        }
+        li:nth-of-type(4n) {
+            margin-right: 0;
+        }
+        li:hover div {
+            display: block;
+        }
+    }
+}
+
+#productlist {
+    div {
+        display: none;
+        width: 2.9rem;
+        position: absolute;
+        padding: 0.1rem;
+        bottom: 0.68rem;
+        text-align: center;
+        background-color: rgba($color: #ffffff, $alpha: 0.9);
+        p {
+            line-height: 16px;
+            margin-bottom: 10px;
+        }
+        button {
+            width: 1.8rem;
+            height: 0.25rem;
+            background-color: $colft;
+            color: white;
+            border: none;
+            border-radius: 0.03rem;
+        }
+        button:hover {
+            cursor: pointer;
+            background-color: $colgreen;
+        }
+    }
+}
+
+#productlist {
+    .miaoshu {
+        line-height: 0.16rem;
+        margin-left: 0.1rem;
+        margin-bottom: 0.1rem;
+        a {
+            color: $colfont;
+            text-decoration: none;
+        }
+        a:hover {
+            color: $colft;
+            text-decoration: underline;
+        }
+    }
+}
