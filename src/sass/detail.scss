@@ -12,4 +12,451 @@ body {
     background-color: #f7f8f8;
     font-size: 100px;
     color: $colfont;
+    font-family: Arial;
+}
+
+#noshow {
+    display: none;
+}
+
+// ---------------------------------
+// 全部分类
+#qbfl {
+    width: 12rem;
+    height: 0.38rem;
+    margin: 0 auto;
+    border-bottom: 0.01rem solid $colgreen;
+    ul {
+        font-size: $fs14;
+        li {
+            float: left;
+            padding: 0 0.3rem;
+            font: bold 15px/16px "Microsoft YaHei";
+            line-height: 0.38rem;
+            text-align: center;
+            a:hover {
+                cursor: pointer;
+                color: $colft;
+            }
+        }
+        li:nth-of-type(1) {
+            width: 1.8rem;
+            font: bold 15px/16px "Microsoft YaHei";
+            line-height: 0.38rem;
+            color: white;
+            background-color: $colgreen;
+        }
+        li:nth-of-type(1):hover {
+            cursor: pointer;
+        }
+    }
+}
+
+// ---------------------------------
+// 详情内容部分
+#detail {
+    width: 12rem;
+    margin: 0 auto;
+    overflow: hidden;
+    font-size: $fs12;
+    .fenlei {
+        height: 0.17rem;
+        margin: 0.1rem 0;
+        line-height: 0.17rem;
+        a {
+            color: $colfont;
+            text-decoration: none;
+        }
+        a:hover {
+            color: $colft;
+        }
+        span {
+            margin: 0 0.1rem;
+        }
+        span:last-of-type {
+            margin: 0;
+        }
+    }
+    //--------------------
+    // 左侧图片
+    .left {
+        width: 5rem;
+        height: 6rem;
+        float: left;
+        // border: solid 0.01rem orange;
+        // overflow: hidden;
+        ul {
+            height: 1rem;
+            li {
+                float: left;
+                height: 0.9rem;
+                margin: 0.1rem 0.15rem 0 0;
+                img {
+                    display: inline-block;
+                    width: 0.88rem;
+                    height: 0.88rem;
+                    border: 0.01rem solid #ccc;
+                }
+                img:hover {
+                    border: 0.01rem solid $colgreen;
+                }
+            }
+            .slt_active {
+                border: 0.01rem solid $colgreen;
+            }
+        }
+    }
+    .left .pic {
+        position: relative;
+        .xt {
+            display: block;
+            width: 4.98rem;
+            height: 4.98rem;
+        }
+        .xf {
+            background: purple;
+            opacity: 0.3;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 1.5rem;
+            height: 1.5rem;
+            visibility: hidden;
+        }
+    }
+    .left {
+        position: relative;
+        .dt {
+            display: block;
+            width: 8rem;
+            height: 8rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .df {
+            background: purple;
+            position: absolute;
+            z-index: 9;
+            left: 4.98rem;
+            top: -0.3rem;
+            width: 6rem;
+            height: 6rem;
+            overflow: hidden;
+            border: solid 0.01rem #ccc;
+            visibility: hidden;
+        }
+    }
+    //-----------------------
+    // 右侧描述
+    .right {
+        width: 7rem;
+        float: left;
+    }
+}
+
+.right_up {
+    width: 7rem;
+    padding-left: 0.2rem;
+    height: 2.13rem;
+    // border: solid 0.01rem blue;
+    .up_title {
+        line-height: 0.37rem;
+        font-size: 0.26rem;
+        font-family: "Microsoft YaHei";
+    }
+    .up_miaoshu {
+        height: 0.40rem;
+        line-height: 0.4rem;
+        margin-top: 0.05rem;
+        color: #777;
+        font: normal 16px/20px "Microsoft YaHei";
+    }
+    // pc和移动端价格
+    .up_price {
+        width: 6.8rem;
+        height: 0.9rem;
+        padding: 0.1rem 0.2rem;
+        margin-top: 0.2rem;
+        background-color: white;
+        color: $colfont;
+        position: relative;
+        .up_jiage {
+            float: left;
+            width: 4.23rem;
+            height: 0.7rem;
+            i {
+                display: inline-block;
+                font-style: normal;
+                width: 0.8rem;
+            }
+            .pc_jiage {
+                height: 0.26rem;
+                line-height: 0.26rem;
+                span {
+                    font-size: 0.22rem;
+                    color: #ff0000;
+                }
+            }
+            .ph_jiage {
+                height: 0.32rem;
+                padding-top: 0.1rem;
+                line-height: 0.21rem;
+                border-top: solid 0.01rem #ccc;
+                margin-top: 0.1rem;
+                .ydzx {
+                    display: inline-block;
+                    width: 2rem;
+                    font-size: $fs12;
+                    color: #999;
+                }
+                i {
+                    font-size: $fs12;
+                    color: #444;
+                    display: inline-block;
+                    font-style: normal;
+                    width: 0.85rem;
+                }
+                span {
+                    font-size: 0.16rem;
+                    color: #ff0000;
+                }
+            }
+        }
+        // 二维码
+        .up_ma {
+            float: left;
+            height: 0.7rem;
+            position: absolute;
+            bottom: 0.08rem;
+            left: 2.92rem;
+            i {
+                display: block;
+                margin-top: 0.48rem;
+                float: left;
+                text-indent: 0.13rem;
+                font-style: normal;
+                background: url(../img/detail-tel.png) no-repeat;
+            }
+            span {
+                display: block;
+                margin-top: 0.48rem;
+                float: left;
+                color: $colft;
+                margin-left: 0.05rem;
+            }
+            s {
+                display: block;
+                float: left;
+                width: 0.7rem;
+                height: 0.7rem;
+                background: url('http://static01.yiguo.com/www/images/bg-code.png') no-repeat;
+                background-size: 100% 100%;
+                img {
+                    height: 0.6rem;
+                    margin-left: 0.08rem;
+                    margin-top: 0.05rem;
+                }
+            }
+        }
+        // 评论
+        .up_pinglun {
+            width: 0.74rem;
+            height: 0.7rem;
+            position: absolute;
+            right: 0.2rem;
+            top: 0.1rem;
+            p {
+                line-height: 0.22rem;
+                color: #999;
+            }
+            span {
+                color: #ff0000;
+                font-size: 0.18rem;
+            }
+        }
+    }
+}
+
+.fenge {
+    border-top: 1px solid #e2e2e2;
+    margin-top: 0.19rem;
+}
+
+// 右侧下
+.right_down {
+    width: 7rem;
+    height: 3.87rem;
+    // border: solid 0.01rem red;
+    padding-top: 0.1rem;
+    .cu {
+        width: 2.82rem;
+        height: 0.28rem;
+        padding-bottom: 0.1rem;
+        padding-top: 0.05rem;
+        border-bottom: dashed 0.01rem #ccc;
+        margin-left: 0.2rem;
+        margin-bottom: 0.2rem;
+        span {
+            display: inline-block;
+            height: 0.17rem;
+            line-height: 0.17rem;
+            background-color: red;
+            color: white;
+            width: 0.3rem;
+            text-align: center;
+            border-radius: 0.03rem;
+        }
+    }
+}
+
+// 加入购物车信息
+.down_left {
+    float: left;
+    width: 5.5rem;
+    height: 2.24rem;
+    padding-right: 0.2rem;
+    border-right: 0.01rem solid #ccc;
+    // 规格
+    .guige {
+        height: 0.55rem;
+        margin-bottom: 0.2rem;
+        span {
+            display: inline-block;
+            line-height: 0.55rem;
+            float: left;
+            margin-left: 0.1rem;
+        }
+        div {
+            float: left;
+            width: 0.68rem;
+            height: 0.55rem;
+            p {
+                border: 0.01rem solid $colgreen;
+                line-height: 0.25rem;
+                text-align: center;
+            }
+            p:nth-of-type(2) {
+                border-top: none;
+                background: url(../img/product.png) no-repeat;
+                background-position: 0.5rem 0.1rem;
+            }
+        }
+        div:hover {
+            color: $colft;
+            cursor: pointer;
+        }
+    }
+    // 预计时间
+    .yjtime {
+        font-family: Arial;
+        line-height: 0.17rem;
+        margin-left: 0.1rem;
+        color: #999;
+        margin-bottom: 0.2rem;
+        span {
+            color: $colft;
+        }
+    }
+    // 退货
+    .tuihuo {
+        font-family: Arial;
+        line-height: 0.17rem;
+        margin-left: 0.1rem;
+        color: #999;
+        margin-bottom: 0.2rem;
+        img {
+            display: inline-block;
+            width: 0.14rem;
+            vertical-align: middle;
+        }
+    }
+    // 加入购物车
+    .jrgwc {
+        height: 0.55rem;
+        margin-bottom: 0.2rem;
+        position: relative;
+        span {
+            display: inline-block;
+            line-height: 0.55rem;
+            // float: left;
+            margin-left: 0.1rem;
+        }
+        input {
+            width: 0.4rem;
+            height: 0.4rem;
+            outline: none;
+            text-align: center;
+            background-color: #f7f8f8;
+            border: #ccc 0.01rem solid;
+            font-size: 0.16rem;
+        }
+        button {
+            display: block;
+            background-color: white;
+            border: #ccc 0.01rem solid;
+            width: 0.20rem;
+            height: 0.22rem;
+            position: absolute;
+            color: #444;
+        }
+        button:hover {
+            cursor: pointer;
+        }
+        button:disabled {
+            color: #999;
+        }
+        .jia {
+            top: 0.04rem;
+            left: 0.94rem;
+        }
+        .jian {
+            top: 0.26rem;
+            left: 0.94rem;
+        }
+        // 加入购物车
+        .gwc {
+            display: inline-block;
+            width: 1.87rem;
+            height: 0.43rem;
+            background-color: $colgreen;
+            color: white;
+            padding: 0.09rem 0;
+            position: absolute;
+            left: 1.4rem;
+            top: 0.06rem;
+            border-radius: 0.03rem;
+            text-align: center;
+            line-height: 0.25rem;
+            font: 18px/25px "Microsoft YaHei";
+            i {
+                display: inline-block;
+                width: 0.28rem;
+                height: 0.25rem;
+                vertical-align: middle;
+                background: url(../img/product.png) no-repeat;
+                background-position: -0.48rem 0;
+            }
+        }
+        .gwc:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+// 产地及发货信息
+.down_right {
+    float: right;
+    width: 1.3rem;
+    height: 1.09rem;
+    padding-left: 0.1rem;
+    p {
+        color: #777;
+        padding: 0.05rem 0;
+        line-height: 0.17rem;
+        span {
+            display: inline-block;
+            width: 0.65rem;
+        }
+    }
 }

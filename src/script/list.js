@@ -4,7 +4,7 @@
     $('#footer').load('./footer.html');
     // 动态加载商品列表     开始
     let $prostr = '';
-    $.get('http://10.31.162.15/www/yiguoshengxian/php/listdata.php', function(data) {
+    $.get('https://bearchild.cn:8443/php/listdata.php', function(data) {
         let $data = JSON.parse(data);
         // console.log($data);
         $.each($data, function(index, val) {
