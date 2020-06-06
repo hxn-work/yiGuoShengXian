@@ -6,7 +6,7 @@
     const sid = location.search.slice(1).split('=')[1];
     // 加载内容
     $.get('https://bearchild.cn:8443/php/selectById.php', { tsid: sid }, function(data) {
-        console.log(JSON.parse(data));
+        // console.log(JSON.parse(data));
         let $data = JSON.parse(data);
         let $urlstr = $data.urls;
         let $urlarr = $urlstr.split(',');

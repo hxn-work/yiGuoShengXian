@@ -2,6 +2,8 @@
     //加载头部和尾部
     $('#header').load('./header.html');
     $('#footer').load('./footer.html');
+    console.log(1);
+    console.log($('#login').html());
 
     //动态渲染中间的商品列表  ----开始
     let $fimastr = '<ul>'

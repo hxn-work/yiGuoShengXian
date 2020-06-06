@@ -222,6 +222,9 @@ body {
         }
         // 购物车
         .top_cart {
+            a {
+                text-decoration: none;
+            }
             float: right;
             width: 1.72rem;
             padding: 0.06rem 0;
@@ -233,6 +236,9 @@ body {
                     height: 0.28rem;
                 }
             }
+        }
+        .top_cart:hover {
+            cursor: pointer;
         }
     }
     dt {
@@ -274,7 +280,7 @@ body {
 
 // 顶部固定导航
 #header_fiex {
-    background-color: rgba($color: $bgcol, $alpha: 0.5);
+    background-color: rgba($color: $bgcol, $alpha: 0.95);
     width: 100%;
     position: absolute;
     top: -0.46rem;
@@ -346,6 +352,9 @@ body {
         }
         // 购物车
         .top_fiex_cart {
+            a {
+                text-decoration: none;
+            }
             float: right;
             width: 1.42rem;
             // padding: 0.06rem 0;
@@ -357,6 +366,9 @@ body {
                     height: 0.28rem;
                 }
             }
+        }
+        .top_fiex_cart:hover {
+            cursor: pointer;
         }
     }
     dt {
