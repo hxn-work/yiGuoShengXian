@@ -28,7 +28,7 @@ body {
             list-style: none;
             float: left;
             font-size: $fs12;
-            margin-right: 10px;
+            margin-right: 0.1rem;
             span {
                 display: inline-block;
                 img {
@@ -147,7 +147,7 @@ body {
 //头部流程
 #cart_header {
     font-size: $fs14;
-    height: 0.7rem;
+    height: 0.8rem;
     background-color: #e0e0e0;
     padding: 0.15rem 0 0.05rem 0;
     div {
@@ -160,6 +160,332 @@ body {
             margin-right: 0.8rem;
             height: 0.5rem;
             background: url(../img/logo.png) no-repeat;
+        }
+        .liucheng {
+            float: right;
+            margin-right: -0.4rem;
+            li {
+                position: relative;
+                float: left;
+                p {
+                    width: 1.90rem;
+                    line-height: 0.17rem;
+                    text-align: center;
+                    font-size: 0.12rem;
+                    font-family: Arial;
+                    color: #444;
+                }
+                i {
+                    display: inline-block;
+                    width: 0.36rem;
+                    height: 0.36rem;
+                    background-color: white;
+                    border: 0.01rem solid $colgreen;
+                    border-radius: 100%;
+                    font-style: normal;
+                    text-align: center;
+                    line-height: 0.36rem;
+                    color: $colgreen;
+                    font-weight: bold;
+                    margin-left: 0.77rem;
+                }
+                span {
+                    display: inline-block;
+                    width: 1.68rem;
+                    height: 0.08rem;
+                    background: #fff;
+                    border: 0.01rem solid #e5e5e5;
+                    position: absolute;
+                    left: 1.13rem;
+                    top: 0.32rem;
+                }
+            }
+            li:nth-of-type(1) {
+                i {
+                    background-color: $colgreen;
+                    color: white;
+                }
+                p {
+                    color: $colft;
+                }
+            }
+        }
+    }
+}
+
+// 主体部分
+h2 {
+    width: 12rem;
+    margin: 0 auto;
+    font-weight: normal;
+    height: 0.38rem;
+    line-height: 0.38rem;
+    background-color: #fff;
+    background-position: 0 0;
+    border-bottom: 0.02rem solid #05984d;
+    margin-top: 0.2rem;
+    font-size: $fs12;
+    background: url(../img/bg_cart.png) no-repeat;
+    background-color: #fff;
+    span {
+        display: inline-block;
+        margin-left: 2.5rem;
+    }
+    span:hover {
+        cursor: pointer;
+    }
+    a {
+        display: inline-block;
+        margin-left: 7.8rem;
+        color: $colft;
+    }
+}
+
+#cart_main {
+    width: 12rem;
+    overflow: hidden;
+    background-color: white;
+    margin: 0 auto;
+    border: solid 0.01rem #ccc;
+    border-top: none;
+    ul {
+        font-size: $fs12;
+        width: 12rem;
+        background-color: white;
+    }
+    .cart_title {
+        width: 11.75rem;
+        height: 0.4rem;
+        background-color: #f1f1f1;
+        margin: 0.1rem auto 0;
+        li {
+            float: left;
+            text-align: center;
+            height: 0.4rem;
+            font: 0.12rem/0.4rem Simsun;
+            color: #262626;
+            text-align: center;
+            padding: 0 0.1rem;
+        }
+        .cart_check {
+            width: 1.5rem;
+            height: 0.4rem;
+            padding: 0 0.1rem 0 0.2rem;
+            text-align: left;
+            input {
+                margin-right: 0.2rem;
+            }
+        }
+        .cart_info {
+            width: 2.9rem;
+            height: 0.4rem;
+            padding: 0 0.1rem 0 0.1rem;
+        }
+        .cart_ub {
+            width: 0.95rem;
+            height: 0.4rem;
+            padding: 0 0.1rem 0 0.1rem;
+        }
+        .cart_price {
+            width: 1.2rem;
+            height: 0.4rem;
+            padding: 0 0.1rem 0 0.1rem;
+        }
+        .cart_num {
+            width: 1.3rem;
+            height: 0.4rem;
+            padding: 0 0.1rem 0 0.1rem;
+        }
+        .cart_heji {
+            width: 1.3rem;
+            height: 0.4rem;
+            padding: 0 0.1rem 0 0.1rem;
+        }
+        .cart_guige {
+            width: 1.3rem;
+            height: 0.4rem;
+            padding: 0 0.1rem 0 0.1rem;
+        }
+        .cart_option {
+            width: 1.3rem;
+            height: 0.4rem;
+            padding: 0 0.1rem 0 0.1rem;
+        }
+    }
+    // 商品列表
+    .cart_product {
+        width: 11.75rem;
+        background-color: white;
+        margin: 0.1rem auto 0;
+        li {
+            width: 11.75rem;
+            height: 1.04rem;
+            border: 0.01rem solid #ebebeb;
+            margin-bottom: 0.1rem;
+            div {
+                float: left;
+                text-align: center;
+                height: 1.02rem;
+                font: 0.12rem/0.4rem Simsun;
+                color: #262626;
+                text-align: center;
+                padding: 0 0.1rem;
+            }
+        }
+        .product_check {
+            width: 0.5rem;
+            line-height: 1.02rem;
+            padding: 0 0.1rem 0 0.2rem;
+            text-align: left;
+            input {
+                margin-right: 0.2rem;
+            }
+        }
+        .product_img {
+            width: 1rem;
+            height: 0.82rem;
+            padding: 0.1rem;
+            img {
+                width: 0.8rem;
+                height: 0.8rem;
+                border: 0.01rem solid #ebebeb;
+            }
+        }
+        .product_info {
+            width: 2.9rem;
+            line-height: 0.82rem;
+            padding: 0.1rem;
+            font-size: $fs14;
+        }
+        .product_ub {
+            width: 0.95rem;
+            line-height: 0.82rem;
+            padding: 0.1rem;
+        }
+        .product_price {
+            width: 1.2rem;
+            line-height: 0.82rem;
+            padding: 0.1rem;
+            font-size: $fs14;
+        }
+        .product_num {
+            width: 1.3rem;
+            line-height: 0.82rem;
+            padding: 0.1rem;
+            position: relative;
+            #product_jian {
+                border: 0.01rem solid #cacbcb;
+                width: 0.2rem;
+                height: 0.2rem;
+                position: absolute;
+                left: 0.2rem;
+                top: 0.41rem;
+            }
+            #pronum {
+                padding: 0;
+                position: absolute;
+                left: 0.39rem;
+                top: 0.41rem;
+                border: 0.01rem solid #cacbcb;
+                width: 0.42rem;
+                height: 0.18rem;
+                text-align: center;
+            }
+            #product_jia {
+                border: 0.01rem solid #cacbcb;
+                width: 0.2rem;
+                height: 0.2rem;
+                position: absolute;
+                left: 0.82rem;
+                top: 0.41rem;
+            }
+            button:hover {
+                cursor: pointer;
+            }
+        }
+        .product_heji {
+            width: 1.3rem;
+            line-height: 0.82rem;
+            padding: 0.1rem;
+            font-size: $fs14;
+            color: #e93005;
+            font-family: Arial;
+        }
+        .product_guige {
+            width: 1.3rem;
+            line-height: 0.82rem;
+            padding: 0.1rem;
+        }
+        .product_option {
+            width: 1.28rem;
+            height: 1.02rem;
+            padding: 0.3rem 0.1rem;
+            p {
+                line-height: 0.24rem;
+                font-size: $fs12;
+            }
+            a:hover {
+                cursor: pointer;
+                color: $colft;
+            }
+        }
+    }
+}
+
+// 底部操作   去结算
+#down_option {
+    width: 11.75rem;
+    height: 0.6rem;
+    margin: 0.2rem auto 0.1rem;
+    background-color: #f7f7f7;
+    font-size: $fs12;
+    color: #666;
+    padding: 0.1rem;
+    line-height: 0.4rem;
+    label {
+        margin-left: 0.1rem;
+        margin-right: 0.1rem;
+    }
+    a {
+        margin-left: 0.2rem;
+        color: $colfont;
+    }
+    a:hover {
+        cursor: pointer;
+        color: $colft;
+    }
+    p {
+        float: right;
+        color: $colfontdark;
+        span {
+            color: $colft;
+            margin-right: 0.05rem;
+            font-size: $fs14;
+            font-weight: bold;
+        }
+        i {
+            margin-left: 0.1rem;
+            font-style: normal;
+            font-size: $fs14;
+            color: #666;
+        }
+        s {
+            color: #ff5317;
+            font-weight: bold;
+            margin: 0 0.05rem;
+            font-size: 0.18rem;
+            text-decoration: none;
+        }
+        button {
+            font: bold 0.18rem/1em "微软雅黑";
+            background-color: #ff5317;
+            color: #fff;
+            padding: 0.1rem 0.2rem;
+            border: none;
+            margin-left: 0.3rem;
+        }
+        button:hover {
+            cursor: pointer;
         }
     }
 }

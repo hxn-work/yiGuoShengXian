@@ -38,9 +38,83 @@
             <a href="./index.html">
                 <h1></h1>
             </a>
+            <ul class="liucheng">
+                <li>
+                    <p>我的购物车</p>
+
+                    <i>1</i>
+                    <span></span>
+                </li>
+                <li>
+                    <p>填写订单信息</p>
+                    <i>2</i><span></span>
+                </li>
+                <li>
+                    <p>成功提交订单</p>
+                    <i>3</i>
+                </li>
+            </ul>
         </div>
     </div>
+    <!-- 主体部分 -->
+    <h2>
+        <span>配送至：&nbsp;上海</span>
+        <a href="./index.html">继续购物 > ></a>
+    </h2>
+    <div id="cart_main">
 
+        <ul class="cart_title">
+            <li class="cart_check"><label><input type="checkbox" checked="checked" class="up_quanxuan">全选</label></li>
+            <li class="cart_info">商品信息</li>
+            <li class="cart_ub">悠币</li>
+            <li class="cart_price">单价</li>
+            <li class="cart_num">购买数量</li>
+            <li class="cart_heji">合计</li>
+            <li class="cart_guige">规格</li>
+            <li class="cart_option">操作</li>
+        </ul>
+        <ul class="cart_product">
+            <li>
+                <div class="product_check">
+                    <input type="checkbox" checked="checked" class="xuanze">
+                </div>
+                <div class="product_img">
+                    <img src="http://img10.yiguoimg.com/d/items/2020/200429/9288740306233501_300.jpg">
+                </div>
+                <div class="product_info">
+                    <span class="db"></span>
+                    <span class="nr">【基地直发】江中食疗蛋蛋匠养元蛋30枚</span>
+                </div>
+                <div class="product_ub"></div>
+                <div class="product_price">￥25.80</div>
+                <div class="product_num">
+                    <button id="product_jian" disabled>-</button>
+                    <input id="pronum" type="text" value="1">
+                    <button id="product_jia">+</button>
+                </div>
+                <div class="product_heji">￥<span>25.80</span></div>
+                <div class="product_guige">8个/盒</div>
+                <div class="product_option">
+                    <p><a id="yrsc">移入收藏</a></p>
+                    <p><a id="del">删除</a></p>
+                </div>
+            </li>
+
+        </ul>
+
+        <div id="down_option">
+            <label><input type="checkbox" checked="checked" class="down_quanxuan">全选</label>
+            <a id="down_del">删除选中的商品</a>
+            <a id="qingkong">清空购物车</a>
+            <p>
+                悠币：<span>0</span>个
+                <i>总价：</i>
+                <s>¥66.66</s>
+                <button id="qjs">去结算</button>
+            </p>
+        </div>
+
+    </div>
     <!-- 底部 -->
     <div id="footer"></div>
 </body>
