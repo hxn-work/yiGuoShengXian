@@ -28,32 +28,42 @@ body {
             overflow: hidden;
             text-align: center;
             height: 5rem;
-            transition: all 0.5s;
-            animation: banner 5s 1;
+            transition: all 2s;
+            // animation: banner 3s 1;
+            // transition: transform 3.5s linear;
+            // transform: scaleX(1) scaleY(1);
             position: absolute;
             top: 0;
             left: 0;
+        }
+        ul {
+            li {
+                transition: transform 3.5s linear;
+                transform: scaleX(1) scaleY(1);
+            }
         }
         li:nth-of-type(1) {
             opacity: 1;
             background: url('https://img05.yiguoimg.com/d/others/200603/9288740478691523.jpg') no-repeat;
             background-position: center;
+            // transform: scaleX(1.1) scaleY(1.1);
         }
         li:nth-of-type(2) {
             opacity: 0;
             background: url('https://img05.yiguoimg.com/d/others/190830/9288738997806878.jpg') no-repeat;
             background-position: center;
+            // transform: scaleX(1.1) scaleY(1.1);
         }
     }
-    //动画
-    @keyframes banner {
-        0% {
-            transform: scaleX(1.1) scaleY(1.1);
-        }
-        100% {
-            transform: scaleX(1) scaleY(1);
-        }
-    }
+    // //动画
+    // @keyframes banner {
+    //     0% {
+    //         transform: scaleX(1.1) scaleY(1.1);
+    //     }
+    //     100% {
+    //         transform: scaleX(1) scaleY(1);
+    //     }
+    // }
     // 圆点
     .yuandian {
         font-size: $fs12;
@@ -894,6 +904,146 @@ $top) {
             height: 4.63rem;
             position: relative;
             @extend %F3F4F6F8;
+        }
+    }
+}
+
+// ----------------------------
+// 楼梯样式
+#louti_warp {
+    position: fixed;
+    top: 3rem;
+    left: 50%;
+    width: 0.4rem;
+    height: 3.6rem;
+    margin-left: -6.55rem;
+    z-index: 20;
+}
+
+#louti {
+    display: none;
+    position: relative;
+    width: 0.4rem;
+    height: 0.4rem;
+    color: #666;
+    cursor: pointer;
+    font-size: $fs12;
+    font-family: Arial;
+    z-index: 20;
+    li {
+        width: 0.4rem;
+        height: 0.4rem;
+        a {
+            display: none;
+            width: 0.4rem;
+            height: 0.4rem;
+            padding: 0.06rem 0.08rem;
+            line-height: 0.14rem;
+            color: #fff;
+            background-color: $colgreen;
+        }
+        span {
+            display: inline-block;
+            // visibility: hidden;
+            width: 0.4rem;
+            height: 0.4rem;
+            background: url(../img/louti.png) no-repeat;
+            // border: 0.01rem solid #ccc;
+            background-position: 0 0;
+        }
+        i {
+            display: block;
+            width: 10px;
+            margin: auto;
+            height: 0;
+            line-height: 0;
+            font-size: 0;
+            border-top: 1px solid #d7d7d7;
+        }
+    }
+    // 第2个li
+    li:nth-of-type(2) {
+        span {
+            background-position: -1.6rem 0;
+        }
+    }
+    // 第3个li
+    li:nth-of-type(3) {
+        span {
+            background-position: -0.8rem 0;
+        }
+    }
+    // 第4个li
+    li:nth-of-type(4) {
+        span {
+            background-position: -1.2rem 0;
+        }
+    }
+    // 第5个li
+    li:nth-of-type(5) {
+        span {
+            background-position: -3.2rem 0;
+        }
+    }
+    // 第6个li
+    li:nth-of-type(6) {
+        span {
+            background-position: -2rem 0;
+        }
+    }
+    // 第7个li
+    li:nth-of-type(7) {
+        span {
+            background-position: -3.6rem 0;
+        }
+    }
+    // 第8个li
+    li:nth-of-type(8) {
+        span {
+            background-position: -2.8rem 0;
+        }
+    }
+    // 最后一个li
+    li:last-of-type {
+        a {
+            display: none;
+            width: 0.4rem;
+            height: 0.4rem;
+            background: url(../img/hdb.png) no-repeat;
+            background-size: 200% 200%;
+            background-position: -0.4rem 0;
+        }
+        span {
+            display: inline-block;
+            width: 0.4rem;
+            height: 0.4rem;
+            background: url(../img/hdb.png) no-repeat;
+            background-size: 200% 200%;
+        }
+        i {
+            border: none;
+        }
+    }
+    li:hover {
+        i {
+            display: none;
+        }
+        span {
+            display: none;
+        }
+        a {
+            display: inline-block;
+        }
+    }
+    .li_show {
+        i {
+            display: none;
+        }
+        span {
+            display: none;
+        }
+        a {
+            display: inline-block;
         }
     }
 }

@@ -1,6 +1,21 @@
 ! function($) {
     //加载头部和尾部
-    $('#header').load('./header.html');
+    $('#header').load('./header.html', function() {
+        $(window).on('scroll', function() {
+            let $top = $(window).scrollTop();
+            const $header = $('#header_fiex');
+            // console.log($header);
+            if ($top >= 120) {
+                $header.stop(true).animate({
+                    top: 0
+                });
+            } else {
+                $header.stop(true).animate({
+                    top: -46
+                });
+            }
+        });
+    });
     $('#footer').load('./footer.html');
     // 获取商品ID
     const sid = location.search.slice(1).split('=')[1];

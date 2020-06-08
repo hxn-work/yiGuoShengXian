@@ -282,7 +282,8 @@ body {
 #header_fiex {
     background-color: rgba($color: $bgcol, $alpha: 0.95);
     width: 100%;
-    position: absolute;
+    position: fixed;
+    z-index: 10;
     top: -0.46rem;
     .header_fiex_main {
         width: 12rem;
