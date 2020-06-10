@@ -18,129 +18,208 @@
     });
     $('#footer').load('./footer.html');
     // 获取商品ID
-    const sid = location.search.slice(1).split('=')[1];
+    const $sid = location.search.slice(1).split('=')[1];
     // 加载内容
-    $.get('https://bearchild.cn:8443/php/selectById.php', { tsid: sid }, function(data) {
-        // console.log(JSON.parse(data));
-        let $data = JSON.parse(data);
-        let $urlstr = $data.urls;
-        let $urlarr = $urlstr.split(',');
-        // console.log($urlarr);
-        // 加载缩略图
-        let $sltstr = '';
-        let $phprice = '';
-        let $xiangqin = '';
-        let $timestr = '';
-        $.each($urlarr, function(index, val) {
-            $sltstr += `<li><img src="${val}" alt="" class="slt"></li>`;
-        });
-        // 设定移动端优惠
-        if ($data.phprice) {
-            $phprice = `<span><i>移动专享</i>¥&nbsp;${$data.phprice}</span>`;
-        } else {
-            $phprice = '<i class="ydzx">更多商品优惠，尽在易果生鲜APP</i>';
+    $.get('https://bearchild.cn:8443/php/selectById.php', { tsid: $sid }, function(data) {
+            // console.log(JSON.parse(data));
+            let $data = JSON.parse(data);
+            let $urlstr = $data.urls;
+            let $urlarr = $urlstr.split(',');
+            // console.log($urlarr);
+            // 加载缩略图
+            let $sltstr = '';
+            let $phprice = '';
+            let $xiangqin = '';
+            let $timestr = '';
+            $.each($urlarr, function(index, val) {
+                $sltstr += `<li><img src="${val}" alt="" class="slt"></li>`;
+            });
+            // 设定移动端优惠
+            if ($data.phprice) {
+                $phprice = `<span><i>移动专享</i>¥&nbsp;${$data.phprice}</span>`;
+            } else {
+                $phprice = '<i class="ydzx">更多商品优惠，尽在易果生鲜APP</i>';
+            }
+            //设定时间
+            // console.log(new Date().getDate());
+            // console.log(new Date().getMonth() + 1);
+            $timestr = `${(new Date().getMonth() + 1)}月${(new Date().getDate()+2)}日`;
+
+            // 设置分类名
+            $('.fenlei .flm').html($data.pname);
+            // 设置两个大图url
+            $('.left .xt').attr('src', $data.url);
+            $('.left .dt').attr('src', $data.url);
+            // 设置小图列表
+            $('.left ul').html($sltstr);
+            // 设置商品名
+            $('.right .up_title').html($data.pname);
+            // 设置商品描述
+            $('.right .up_miaoshu').html($data.pmiaosu);
+            // 设置pc端商品价格
+            $('.pc_jiage span').html($data.pcprice);
+            //设置移动端价格
+            $('.ph_jiage').html($phprice);
+            // 设置规格里的价格及规格
+            $('.guige .ggp').html($data.pcprice);
+            $('.guige .gg').html($data.guige + '/盒');
+            // 设置预计送达时间
+            $('.yjtime .yj').html($timestr);
+            // 设置商品编号
+            $('.pid').html('<span>商品编号：</span>' + $data.id);
+
+            //  加载-设置结束
+            // ------------------------------------
+            // 切换小图
+            const $slt_list = $('.left ul');
+            const $pic_warp = $('.left .pic');
+            const $xt = $('.left .xt');
+            const $dt = $('.left .dt');
+            const $xf = $('.left .xf');
+            const $df = $('.left .df');
+            $slt_list.on('mouseover', 'li', function() {
+                let $imglj = $(this).find('img').attr('src');
+                $xt.attr('src', $imglj);
+                $dt.attr('src', $imglj);
+                $slt_list.find('li').removeClass('slt_active');
+                $(this).addClass('slt_active');
+
+            })
+
+            // 放大镜效果   开始
+            // 获取鼠标位置
+            // $sbx=
+            $pic_warp.hover(function() {
+
+                $df.show();
+                $xf.show();
+                $xf.css({
+                    width: $xt.width() * $df.width() / $dt.width(),
+                    height: $xt.height() * $df.height() / $dt.height(),
+                });
+                $(this).on('mousemove', function(e) {
+                    // 获取鼠标位置
+                    let $sbx = e.pageX;
+                    let $sby = e.pageY;
+                    // console.log($sbx, $sby);
+                    // 获取xf位置
+                    let $xf_top = $sby - $pic_warp.offset().top - $xf.outerHeight() / 2;
+
+                    let $xf_left = $sbx - $pic_warp.offset().left - $xf.outerWidth() / 2;
+
+                    $xf_top = $xf_top < 0 ? 0 : $xf_top > ($pic_warp.outerHeight() - $xf.outerHeight()) ? $pic_warp.outerHeight() - $xf.outerHeight() : $xf_top;
+                    $xf_left = $xf_left < 0 ? 0 : $xf_left > ($pic_warp.outerWidth() - $xf.outerWidth()) ? $pic_warp.outerWidth() - $xf.outerWidth() : $xf_left;
+                    // console.log($xf_top, $xf_left);
+                    // 计算比例
+                    let $bl = ($dt.innerWidth()) / $xt.innerWidth();
+
+                    // 小图移动
+                    $xf.css({
+                        top: $xf_top,
+                        left: $xf_left,
+                    });
+                    // 大图移动
+                    $dt.css({
+                        top: -$xf_top * $bl,
+                        left: -$xf_left * $bl,
+                    })
+                })
+
+            }, function() {
+                $df.hide();
+                $xf.hide();
+            })
+        })
+        // 放大镜效果   结束
+        // --------------------------------------
+        // 数量加减     开始
+    const $num_input = $('.jrgwc input');
+    const $num_jia = $('.jrgwc .jia');
+    const $num_jian = $('.jrgwc .jian');
+    const $jrgwc = $('.jrgwc .gwc');
+    let $num = 1;
+    // 改变-号的状态函数
+    function $changJian() {
+        if ($num_input.val() > 1) {
+            $num_jian.removeProp('disabled');
+        } else if ($num_input.val() <= 1) {
+            // console.log(1)
+            $num_jian.attr('disabled', 'disabled');
         }
-        //设定时间
-        // console.log(new Date().getDate());
-        // console.log(new Date().getMonth() + 1);
-        $timestr = `${(new Date().getMonth() + 1)}月${(new Date().getDate()+2)}日`;
+    }
+    // input改变事件
+    $num_input.on('change   ', function() {
+            $num = parseInt($num_input.val());
+            if ($num < 1) {
+                $num = 1;
+                alert("商品数量不能小于1");
+            }
+            $num_input.val($num);
+            $changJian();
+        })
+        // +号事件
+    $num_jia.on('click', function() {
+        $num = parseInt($num_input.val());
+        $num += 1;
+        $num_input.val($num);
+        $changJian();
+    });
+    // -号事件  
+    $num_jian.on('click', function() {
+        $num = parseInt($num_input.val());
+        $num -= 1;
+        $num_input.val($num);
+        $changJian();
+    });
+    // 数量加减     结束
+    // ---------------------------------
+    // 加入购物车
+    let $proid = [];
+    let $pronum = [];
+    $jrgwc.on('click', function() {
+        $num = parseInt($num_input.val());
+        // alert($sid)
+        // 已存在购物车时走这里
+        if (localStorage.getItem('proid')) {
+            // console.log(1);
+            // 获取已存在的购物车
+            $proid = localStorage.getItem('proid').split(',');
+            $pronum = localStorage.getItem('pronum').split(',');
+            // 当添加的商品已存在现有的购物车里时
+            if ($.inArray($sid, $proid) !== -1) {
+                // console.log(2);
+                // 找到商品所在的索引，改变商品数量重新添加
+                $pronum[$.inArray($sid, $proid)] = parseInt($pronum[$.inArray($sid, $proid)]) + $num;
+                localStorage.setItem('pronum', $pronum);
+                // 存储完将input的值恢复为1，并禁用-按钮
+                $num_input.val(1);
+                $changJian();
+            }
+            // 当添加的购物车没存在现有的购物车时 
+            else if ($.inArray($sid, $proid) === -1) {
+                // console.log(3);
+                // 直接添加商品和数量
+                $proid.push($sid);
+                $pronum.push($num);
+                localStorage.setItem('proid', $proid);
+                localStorage.setItem('pronum', $pronum);
+                // 存储完将input的值恢复为1，并禁用-按钮
+                $num_input.val(1);
+                $changJian();
+            }
+        } else {
+            // console.log(4);
+            // 第一次添加购物车时走这里
+            $proid.push($sid);
+            $pronum.push($num);
+            localStorage.setItem('proid', $proid);
+            localStorage.setItem('pronum', $pronum);
+            // 存储完将input的值恢复为1，并禁用-按钮
+            $num_input.val(1);
+            $changJian();
+        }
+    });
+    //加入购物车结束
 
-        // 加载开始
-        $xiangqin = `        <p class="fenlei">
-            <a href="./index.html">首页</a><span>></span>
-            <a href="./index.html">精选肉类</a><span>></span>
-            <a href="./list.html">蛋</a><span>></span>
-            <span>${$data.pname}</span>
-        </p>
-        <!-- 左侧图片 -->
-        <div class="left">
-            <div class="pic">
-                <img src="${$data.url}" alt="" class="xt">
-                <div class="xf"></div>
-            </div>
-            <div class="df">
-                <img src="${$data.url}" alt="" class="dt">
-            </div>
-            <ul>
-                ${$sltstr}
-            </ul>
-        </div>
-        <!-- 右侧描述 -->
-        <div class="right">
-            <!-- 上 -->
-            <div class="right_up">
-                <h2 class="up_title">${$data.pname}</h2>
-                <p class="up_miaoshu">${$data.pmiaosu}</p>
-                <div class="up_price">
-                    <!-- pc端和移动端价格 -->
-                    <div class="up_jiage">
-                        <p class=pc_jiage><i>价格：</i>
-                            <span>¥&nbsp;${$data.pcprice}</span>
-                        </p>
-                        <p class="ph_jiage">
-                            ${$phprice}
-                        </p>
-                    </div>
-                    <!-- 扫码购 -->
-                    <div class="up_ma">
-                        <i>手机下单购买</i>
-                        <span>立即扫码</span>
-                        <s><img src="./img/ma.png" alt=""></s>
-                    </div>
-                    <!-- 评论 -->
-                    <div class="up_pinglun">
-                        <p>总体满意度</p>
-                        <p><span>5.0</span> 分</p>
-                        <p>(评论数455)</p>
-                    </div>
 
-                </div>
-                <!-- 分割 -->
-                <div class="fenge"></div>
-            </div>
-
-            <!-- 下 -->
-            <div class="right_down">
-                <p class="cu"> <span>促</span> 该商品不与其他优惠券、现金券及抵用卡同享
-                </p>
-                <!-- 加入购物车 -->
-                <div class="down_left">
-                    <!-- 规格 -->
-                    <div class="guige">
-                        <span>规格：</span>
-                        <div>
-                            <p>${$data.pcprice}</p>
-                            <p>${$data.guige}/盒</p>
-                        </div>
-                    </div>
-                    <!-- 预计时间 -->
-                    <p class="yjtime"><span>12:00</span> 后完成订单 预计后天 <span>${$timestr}</span> 送达</p>
-                    <!-- 退货 -->
-                    <p class="tuihuo">
-                        <img src="http://static01.yiguo.com/www/images/icon1.png" alt=""> 不支持7天无理由退货
-                    </p>
-                    <!-- 加入购物车 -->
-                    <div class="jrgwc">
-                        <span>数量：</span>
-                        <input type="text" id="number" value="1">
-                        <button class="jia">+</button>
-                        <button class="jian" disabled>-</button>
-                        <a class="gwc">
-                            <i></i> 加入购物车
-                        </a>
-                    </div>
-                </div>
-                <!-- 产地及发货信息 -->
-                <div class="down_right">
-                    <p><span>原产地：</span>广东中山</p>
-                    <p><span>商品编号：</span>${$data.id}</p>
-                    <p><span>品牌：</span>江中</p>
-                    <p><span>发货地：</span>上海宝山</p>
-                </div>
-            </div>
-        </div>`
-            // 加载结束
-        $('#detail').html($xiangqin);
-
-    })
 }(jQuery);

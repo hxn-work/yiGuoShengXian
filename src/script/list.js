@@ -33,7 +33,7 @@
             <a href="./detail.html?pid=${val.id}"><img class="lazyload" data-original="${val.url}" alt=""></a>
             <div>
                 <p>${val.pmiaosu}</p>
-                <button>加入购物车</button>
+                <button index="${val.id}">加入购物车</button>
             </div>
 
             <p class="miaoshu"><a href="./detail.html?pid=${val.id}">${val.pname}</a></p>
@@ -41,6 +41,7 @@
         </li>`
         });
         $('#productlist ul').html($prostr);
+        // 懒加载
         $(function() {
             $("img.lazyload").lazyload({ effect: "fadeIn" });
         });
@@ -50,6 +51,49 @@
             array_default[index] = $(this);
         });
     });
+
+    // ---------------------------------
+    // 加入购物车
+    let $proid = [];
+    let $pronum = [];
+    $('#productlist ul').on('click', 'button', function() {
+        let $num = 1;
+        let $sid = $(this).attr('index');
+        // alert($sid);
+        // 已存在购物车时走这里
+        if (localStorage.getItem('proid')) {
+            // console.log(1);
+            // 获取已存在的购物车
+            $proid = localStorage.getItem('proid').split(',');
+            $pronum = localStorage.getItem('pronum').split(',');
+            // 当添加的商品已存在现有的购物车里时
+            if ($.inArray($sid, $proid) !== -1) {
+                // console.log(2);
+                // 找到商品所在的索引，改变商品数量重新添加
+                $pronum[$.inArray($sid, $proid)] = parseInt($pronum[$.inArray($sid, $proid)]) + $num;
+                localStorage.setItem('pronum', $pronum);
+            }
+            // 当添加的购物车没存在现有的购物车时 
+            else if ($.inArray($sid, $proid) === -1) {
+                // console.log(3);
+                // 直接添加商品和数量
+                $proid.push($sid);
+                $pronum.push($num);
+                localStorage.setItem('proid', $proid);
+                localStorage.setItem('pronum', $pronum);
+            }
+        } else {
+            // console.log(4);
+            // 第一次添加购物车时走这里
+            $proid.push($sid);
+            $pronum.push($num);
+            localStorage.setItem('proid', $proid);
+            localStorage.setItem('pronum', $pronum);
+        }
+    });
+    //加入购物车结束
+    // --------------------------------
+
     // 动态加载商品列表     结束
     // 排序      开始
     // 默认排序
