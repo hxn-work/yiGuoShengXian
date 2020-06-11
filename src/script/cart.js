@@ -346,20 +346,22 @@
                     $.cookie('pronum', $pronum, { expires: 0, path: '/' });
                 }
             } else {
-                let $li_list = $cart_ul.find('.xuanze:visible');
-                $.each($li_list, function(ind, val) {
-                    if ($(this).prop('checked')) {
-                        $(this).parents('.moban').remove();
-                        $('#down_zj').html('¥' + 0);
-                        // 改变cookie的数量
-                        let $pro_id = $(this).parents('.moban').attr('pro_index');
-                        let $ind = $.inArray($pro_id, $proid);
-                        $pronum.splice($ind, 1);
-                        $proid.splice($ind, 1);
-                        $.cookie('proid', $proid, { expires: 7, path: '/' });
-                        $.cookie('pronum', $pronum, { expires: 7, path: '/' });
-                    }
-                });
+                if (window.confirm('你确定要删除所选商品吗？')) {
+                    let $li_list = $cart_ul.find('.xuanze:visible');
+                    $.each($li_list, function(ind, val) {
+                        if ($(this).prop('checked')) {
+                            $(this).parents('.moban').remove();
+                            $('#down_zj').html('¥' + 0);
+                            // 改变cookie的数量
+                            let $pro_id = $(this).parents('.moban').attr('pro_index');
+                            let $ind = $.inArray($pro_id, $proid);
+                            $pronum.splice($ind, 1);
+                            $proid.splice($ind, 1);
+                            $.cookie('proid', $proid, { expires: 7, path: '/' });
+                            $.cookie('pronum', $pronum, { expires: 7, path: '/' });
+                        }
+                    });
+                }
             }
 
         });
