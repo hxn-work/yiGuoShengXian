@@ -43,7 +43,7 @@
     // 获取商品ID
     const $sid = location.search.slice(1).split('=')[1];
     // 加载内容
-    $.get('https://www.bearchild.cn:8443/php/selectById.php', { tsid: $sid }, function(data) {
+    $.get('http://10.31.162.15/www/yiguoshengxian/php/selectById.php', { tsid: $sid }, function(data) {
             // console.log(JSON.parse(data));
             let $data = JSON.parse(data);
             let $urlstr = $data.urls;

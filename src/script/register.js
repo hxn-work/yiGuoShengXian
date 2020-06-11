@@ -48,7 +48,7 @@
                 $uname_ts.html('<i></i>用户名长度不符合规定！');
                 $uname_ts.prop('class', 'warning');
             } else {
-                $.get('https://www.bearchild.cn:8443/php/register.php', { 'uname': $uname.val() }, function(data) {
+                $.get('http://10.31.162.15/www/yiguoshengxian/php/register.php', { 'uname': $uname.val() }, function(data) {
                     // console.log(data == false);
                     if (data == false) {
                         $name_flag = false;

@@ -43,7 +43,7 @@
         let $pronum = $.cookie('pronum').split(',').map(item => +item);
         // console.log($proid);
         // console.log($pronum);
-        $.post("https://www.bearchild.cn:8443/php/cart.php", { sid: $proid }, function(data) {
+        $.post("http://10.31.162.15/www/yiguoshengxian/php/cart.php", { sid: $proid }, function(data) {
             // console.log(data);
             $.each(data, function(index, val) {
                 let $pro_num = $pronum[index];

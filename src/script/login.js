@@ -14,7 +14,7 @@
             let $uname = $('#username').val();
             let $upwd = hex_sha1($('#userpassword').val());
             // console.log($upwd);
-            $.post("https://www.bearchild.cn:8443/php/login.php", {
+            $.post("http://10.31.162.15/www/yiguoshengxian/php/login.php", {
                 uname: $uname,
                 upwd: $upwd
             }, function(data) {
@@ -33,7 +33,7 @@
     });
     $yan.on('blur', function() {
         let $yzm_val = $yan.val();
-        $.post('https://www.bearchild.cn:8443/php/yan.php', { 'yzm_val': $yzm_val },
+        $.post('http://10.31.162.15/www/yiguoshengxian/php/yan.php', { 'yzm_val': $yzm_val },
             function(data) {
                 if (data == 1) {
                     $yzm_flag = true;

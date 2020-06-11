@@ -47,7 +47,7 @@
     let next = null;
     let upordown = 0;
 
-    $.get('https://www.bearchild.cn:8443/php/listdata.php', function(data) {
+    $.get('http://10.31.162.15/www/yiguoshengxian/php/listdata.php', function(data) {
         let $prostr = '';
         let $data = JSON.parse(data);
         // console.log($data);
@@ -143,7 +143,7 @@
         callback: function(api) {
             // console.log(api.getCurrent());
             $.ajax({
-                url: 'https://www.bearchild.cn:8443/php/listdata.php',
+                url: 'http://10.31.162.15/www/yiguoshengxian/php/listdata.php',
                 data: {
                     page: api.getCurrent()
                 },
