@@ -169,10 +169,33 @@
             $email_flag = false;
         }
     });
+    // 验证-验证码
+    $('#txyzm').on('blur', function() {
+        let $yzm_val = $('#txyzm').val();
+        $.post('http://10.31.162.15/www/yiguoshengxian/php/yan.php', { 'yzm_val': $yzm_val },
+            function(data) {
+                if (data == 1) {
+                    $tx_flag = true;
+                    $('#txyzm_ts').html('<i></i>').css('margin-left', '10px');
+                    $('#txyzm_ts').prop('class', 'ok');
+                } else {
+                    $tx_flag = false;
+                    $('#txyzm_ts').html('<i></i>验证码错误').css('margin-left', '10px');
+                    $('#txyzm_ts').prop('class', 'err');
+                }
+
+            })
+    });
 
 
     // 判断条件是否符合提交
     $form.on('submit', function() {
+
+        if ($('#txyzm').val() === '') {
+            $tx_flag = false;
+            $('#txyzm_ts').html('<i></i>验证码错误').css('margin-left', '10px');
+            $('#txyzm_ts').prop('class', 'err');
+        }
         if ($uname.val() === '') {
             $name_flag = false;
             $uname_ts.html('<i></i>用户名不能为空');
@@ -203,7 +226,7 @@
             $yty_ts.html('<i></i>请接受服务协议');
             $yty_ts.prop('class', 'err');
         }
-        if ($name_flag && $phone_flag && $pass_flag && $repass_flag && $email_flag) {
+        if ($name_flag && $phone_flag && $pass_flag && $repass_flag && $email_flag && $tx_flag) {
             // return true;
             return $yty.prop('checked');
         }

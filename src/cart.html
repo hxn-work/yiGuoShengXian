@@ -64,7 +64,7 @@
     <div id="cart_main">
 
         <ul class="cart_title">
-            <li class="cart_check"><label><input type="checkbox" checked="checked" class="up_quanxuan">全选</label></li>
+            <li class="cart_check"><label><input id="up_qx" type="checkbox" checked="checked" class="up_quanxuan">全选</label></li>
             <li class="cart_info">商品信息</li>
             <li class="cart_ub">悠币</li>
             <li class="cart_price">单价</li>
@@ -86,7 +86,7 @@
                     <span class="nr">【基地直发】江中食疗蛋蛋匠养元蛋30枚</span>
                 </div>
                 <div class="product_ub"></div>
-                <div class="product_price">￥25.80</div>
+                <div class="product_price">￥<span>25.80</span></div>
                 <div class="product_num">
                     <button class="product_jian">-</button>
                     <input class="pronum" type="text" value="1">
@@ -109,7 +109,7 @@
             <p>
                 悠币：<span>0</span>个
                 <i>总价：</i>
-                <s>¥0</s>
+                <s id="down_zj">¥0</s>
                 <button id="qjs">去结算</button>
             </p>
         </div>
@@ -119,6 +119,7 @@
     <div id="footer"></div>
 </body>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+<script src="./thirdplugins/jquery.cookie.js"></script>
 <script src="./script/cart.js"></script>
 
 </html>

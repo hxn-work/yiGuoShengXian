@@ -44,9 +44,11 @@
                 <p class="yzm">
                     <label for="yan" class="ypic"></label>
                     <input type="text" id="yan" name="yzm" placeholder="验证码">
-                    <label class="yy"></label>
-                    <i>换一张</i>
-                    <!-- <span class="yti"></span> -->
+                    <label class="yy">
+                        <img id="yzmm" alt="验证码" onClick="this.src='http://10.31.162.15/www/yiguoshengxian/php/code.php?time='+new Date().getTime();" src="http://10.31.162.15/www/yiguoshengxian/php/code.php?time='+new Date().getTime();" style="cursor:pointer;">
+                    </label>
+                    <i id="yti"></i>
+                    <!-- <span id="yti">123</span> -->
                 </p>
                 <!-- 记住密码 -->
                 <p class="jzmm">

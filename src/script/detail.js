@@ -203,17 +203,17 @@
         $num = parseInt($num_input.val());
         // alert($sid)
         // 已存在购物车时走这里
-        if (localStorage.getItem('proid')) {
+        if ($.cookie('proid')) {
             // console.log(1);
             // 获取已存在的购物车
-            $proid = localStorage.getItem('proid').split(',');
-            $pronum = localStorage.getItem('pronum').split(',');
+            $proid = $.cookie('proid').split(',');
+            $pronum = $.cookie('pronum').split(',');
             // 当添加的商品已存在现有的购物车里时
             if ($.inArray($sid, $proid) !== -1) {
                 // console.log(2);
                 // 找到商品所在的索引，改变商品数量重新添加
                 $pronum[$.inArray($sid, $proid)] = parseInt($pronum[$.inArray($sid, $proid)]) + $num;
-                localStorage.setItem('pronum', $pronum);
+                $.cookie('pronum', $pronum, { expires: 7, path: '/' });
                 // 存储完将input的值恢复为1，并禁用-按钮
                 $num_input.val(1);
                 $changJian();
@@ -224,8 +224,8 @@
                 // 直接添加商品和数量
                 $proid.push($sid);
                 $pronum.push($num);
-                localStorage.setItem('proid', $proid);
-                localStorage.setItem('pronum', $pronum);
+                $.cookie('proid', $proid, { expires: 7, path: '/' });
+                $.cookie('pronum', $pronum, { expires: 7, path: '/' });
                 // 存储完将input的值恢复为1，并禁用-按钮
                 $num_input.val(1);
                 $changJian();
@@ -235,8 +235,8 @@
             // 第一次添加购物车时走这里
             $proid.push($sid);
             $pronum.push($num);
-            localStorage.setItem('proid', $proid);
-            localStorage.setItem('pronum', $pronum);
+            $.cookie('proid', $proid, { expires: 7, path: '/' });
+            $.cookie('pronum', $pronum, { expires: 7, path: '/' });
             // 存储完将input的值恢复为1，并禁用-按钮
             $num_input.val(1);
             $changJian();

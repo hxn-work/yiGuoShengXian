@@ -31,9 +31,9 @@
                         <label for="txyzm">图形验证码</label>
                         <input type="text" id="txyzm" name="txyzm" placeholder="图形验证码">
                         <label class="yy">
-                            <img src="" alt="">
+                            <img alt="验证码" onClick="this.src='http://10.31.162.15/www/yiguoshengxian/php/code.php?time='+new Date().getTime();" src="http://10.31.162.15/www/yiguoshengxian/php/code.php?time='+new Date().getTime();" style="cursor:pointer;">
                         </label>
-                        <i>换一张</i>
+                        <!-- <i>换一张</i> -->
                         <span id="txyzm_ts"></span>
                     </p>
                     <!-- 用户名 -->

@@ -145,6 +145,7 @@ body {
 .yzm {
     height: 0.40rem;
     width: 3.08rem;
+    position: relative;
     .ypic {
         display: inline-block;
         vertical-align: middle;
@@ -172,12 +173,13 @@ body {
         margin-left: -0.06rem;
     }
     i {
-        font: 12px Arial, "SimSun";
-        color: #878787;
-    }
-    i:hover {
-        color: $colft;
-        cursor: pointer;
+        display: inline-block;
+        width: 0.2rem;
+        height: 0.2rem;
+        margin-left: 0.1rem;
+        padding-top: 0.1rem;
+        position: absolute;
+        top: 0.1rem;
     }
 }
 
@@ -241,4 +243,19 @@ body {
     span:hover {
         cursor: pointer;
     }
+}
+
+// 三种状态
+// ok
+.ok {
+    background: url(../img/dl_yz.png) no-repeat;
+    background-position: 0 -200px;
+    margin-right: 0.05rem;
+}
+
+// error
+.err {
+    background: url(../img/dl_yz.png) no-repeat;
+    background-position: -40px -200px;
+    margin-right: 0.05rem;
 }
