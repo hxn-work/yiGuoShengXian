@@ -25,19 +25,21 @@
             <p class="tishi">我已经注册，现在就<a href="./login.html">登录</a></p>
             <!-- 表单详情 -->
             <div class="left">
-                <form action="" method="POST">
+                <form action="http://10.31.162.15/www/yiguoshengxian/php/register.php" method="POST">
                     <!-- 验证码 -->
                     <p class="txyzm">
                         <label for="txyzm">图形验证码</label>
                         <input type="text" id="txyzm" name="txyzm" placeholder="图形验证码">
-                        <label class="yy"></label>
+                        <label class="yy">
+                            <img src="" alt="">
+                        </label>
                         <i>换一张</i>
                         <span id="txyzm_ts"></span>
                     </p>
                     <!-- 用户名 -->
                     <p class="uname">
                         <label for="uname">用户名</label>
-                        <input type="text" id="uname" name="uname" placeholder="用户名">
+                        <input type="text" id="uname" name="uname" placeholder="用户名&nbsp;(14位英文字母或7位汉字)">
                         <span id="uname_ts"></span>
                     </p>
                     <!-- 手机号 -->
@@ -49,7 +51,7 @@
                     <!-- 密码 -->
                     <p class="upwd">
                         <label for="upwd">密码</label>
-                        <input type="password" id="upwd" name="upwd" placeholder="密码">
+                        <input type="password" id="upwd" name="upwd" placeholder="密码&nbsp;(包括大小写字母、数字、特殊字符)">
                         <span id="upwd_ts"></span>
                     </p>
                     <!-- 确认密码 -->
@@ -58,21 +60,22 @@
                         <input type="password" id="urepwd" name="urepwd" placeholder="确认密码">
                         <span id="urepwd_ts"></span>
                     </p>
-                    <!-- 邀请码 -->
-                    <p class="yqm">
-                        <label for="yqm">邀请码</label>
-                        <input type="text" id="yqm" name="yqm" placeholder="邀请码">
-                        <span id="yqm_ts"></span>
+                    <!-- 邮箱 -->
+                    <p class="email">
+                        <label for="email">邮箱</label>
+                        <input type="text" id="email" name="email" placeholder="邮箱">
+                        <span id="email_ts"></span>
                     </p>
                     <!-- 同意 -->
                     <p class="yty">
                         <label for=""></label>
                         <input type="checkbox" id="yty"><label for="" class="yty_la">我已阅读并同意<a>《易果服务协议》</a><a>《隐私政策》</a></label>
+                        <span id="yty_ts"></span>
                     </p>
                     <!-- 提交 -->
                     <p class="tj">
                         <label for=""></label>
-                        <input type="submit" value="立即注册" id="tj">
+                        <input type="submit" value="立即注册" id="tj" name="submit">
                     </p>
 
                 </form>
@@ -85,6 +88,6 @@
     <div id="footer"></div>
 </body>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
-<script src="./script/login.js"></script>
+<script src="./script/register.js"></script>
 
 </html>
