@@ -1,4 +1,7 @@
 <?php
+header('content-type:text/html;charset=utf8');
+header('Access-Control-Allow-Origin:*');  //允许跨域的网址，*所有的网址。
+header('Access-Control-Allow-Method:POST,GET'); //允许跨域的请求方式。
 session_start();
 $code=array("width"=>60,"height"=>38,	"len"=>4,			 
 	"char"=>3,"imx"=>8,"imy"=>10,"cookie"=>"regsession_code",

@@ -50,7 +50,7 @@
     let $f6mastr = '<ul>'
     let $f7mastr = '<ul>'
     let $f8mastr = '<ul>'
-    $.get('https://bearchild.cn:8443/php/productdata.php', function(data) {
+    $.get('https://www.bearchild.cn:8443/php/productdata.php', function(data) {
         let $data = JSON.parse(data);
         //f1楼层内容
         let $f1m = $data.data1;
