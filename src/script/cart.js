@@ -1,5 +1,33 @@
 ! function($) {
     $('#footer').load('./footerlr.html');
+    // 登录注册  开始
+    const $yhm = $('#yhm');
+    const $login = $('#login');
+    const $register = $('#register');
+    const $tuichu = $('#tuichu');
+    let $uname = localStorage.getItem('uname');
+    if ($uname == null) {
+        $login.css('display', 'inline-block');
+        $yhm.css('display', 'none');
+        $register.css('display', 'inline-block');
+        $tuichu.css('display', 'none');
+    } else {
+        $login.css('display', 'none');
+        $yhm.html($uname).css('display', 'inline-block');
+        $register.css('display', 'none');
+        $tuichu.css('display', 'inline-block');
+    }
+    $tuichu.on('click', function() {
+        localStorage.removeItem('uname');
+        $login.css('display', 'inline-block');
+        $yhm.css('display', 'none');
+        $register.css('display', 'inline-block');
+        $tuichu.css('display', 'none');
+    })
+
+    // 登录注册  结束
+
+
     const $zj = $('#down_option p s');
     const $cart_ul = $('.cart_product');
     if (localStorage.getItem('proid')) {

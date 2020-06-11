@@ -45,7 +45,7 @@ body {
 
 //主体
 #lg_main {
-    height: 4.84rem;
+    height: 5.04rem;
     padding-top: 0.3rem;
     background-color: white;
     font-size: $fs12;
@@ -63,7 +63,7 @@ body {
         padding: 0.3rem 0.2rem 0.2rem;
         float: right;
         width: 3.5rem;
-        height: 4.54rem;
+        height: 4.74rem;
         margin-right: 1.05rem;
         p {
             position: relative;
@@ -88,6 +88,14 @@ body {
             }
         }
     }
+}
+
+.login_ts {
+    display: none;
+    line-height: 0.18rem;
+    color: #E4393C;
+    border: 0.01rem solid #E4393C;
+    padding: 0.03rem 0.1rem;
 }
 
 .uname {

@@ -43,7 +43,7 @@
             $uname_ts.prop('class', 'err');
         } else {
             let $unameval = $uname.val().replace(/[\u4e00-\u9fA5]/g, 'ab').length;
-            if ($unameval < 7 || $unameval > 14) {
+            if ($unameval > 14) {
                 $name_flag = false;
                 $uname_ts.html('<i></i>用户名长度不符合规定！');
                 $uname_ts.prop('class', 'warning');
