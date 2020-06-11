@@ -172,19 +172,19 @@
     // 验证-验证码
     $('#txyzm').on('blur', function() {
         let $yzm_val = $('#txyzm').val();
-        let $cok_yzm = $.cookie('real_name');
-        ! function(data) {
-            if ($yzm_val == $cok_yzm) {
-                $tx_flag = true;
-                $('#txyzm_ts').html('<i></i>').css('margin-left', '10px');
-                $('#txyzm_ts').prop('class', 'ok');
-            } else {
-                $tx_flag = false;
-                $('#txyzm_ts').html('<i></i>验证码错误').css('margin-left', '10px');
-                $('#txyzm_ts').prop('class', 'err');
-            }
+        $.post('http://10.31.162.15/www/yiguoshengxian/php/yan.php', { 'yzm_val': $yzm_val },
+            function(data) {
+                if (data == 1) {
+                    $tx_flag = true;
+                    $('#txyzm_ts').html('<i></i>').css('margin-left', '10px');
+                    $('#txyzm_ts').prop('class', 'ok');
+                } else {
+                    $tx_flag = false;
+                    $('#txyzm_ts').html('<i></i>验证码错误').css('margin-left', '10px');
+                    $('#txyzm_ts').prop('class', 'err');
+                }
 
-        }();
+            })
     });
 
 

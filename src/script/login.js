@@ -33,15 +33,16 @@
     });
     $yan.on('blur', function() {
         let $yzm_val = $yan.val();
-        let $cok_yzm = $.cookie('real_name');
-        ! function() {
-            if ($yzm_val == $cok_yzm) {
-                $yzm_flag = true;
-                $yzm_ts.prop('class', 'ok');
-            } else {
-                $yzm_ts.prop('class', 'err');
-            }
-        }();
+        $.post('https://www.bearchild.cn:8443/php/yan.php', { 'yzm_val': $yzm_val },
+            function(data) {
+                if (data == 1) {
+                    $yzm_flag = true;
+                    $yzm_ts.prop('class', 'ok');
+                } else {
+                    $yzm_ts.prop('class', 'err');
+                }
+
+            })
     });
 
 }(jQuery);

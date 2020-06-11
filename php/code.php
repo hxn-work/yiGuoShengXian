@@ -1,5 +1,4 @@
 <?php
-header('charset=utf8');
 header('Access-Control-Allow-Origin:*');  //允许跨域的网址，*所有的网址。
 header('Access-Control-Allow-Method:POST,GET'); //允许跨域的请求方式。
 session_start();
@@ -21,7 +20,6 @@ for($i=0;$i<$code["len"];$i++){
 
 $_SESSION['regsession_code']=$code["value"];  //验证码的值 
 
-setcookie("real_name", $code["value"], time()+180,'/');
 
 
 //生成图片
@@ -40,11 +38,4 @@ imagerectangle($im,0,0,$code["width"]-1,$code["height"]-1,$font);
 imagepng($im);
 imagedestroy($im);
 
-// $yzm = $_SESSION['regsession_code'];
-// if(isset($_POST['yzm_val'])){
-//     if($_POST['yzm_val']==$yzm){
-//         echo 1;
-//     }else{
-//         echo 0;
-//     }
-// }
+
